@@ -14,6 +14,7 @@
 
 #include "copyright.h"
 #include "system.h"
+#include "synch.h"
 
 //----------------------------------------------------------------------
 // SimpleThread
@@ -24,12 +25,19 @@
 //      debugging purposes.
 //----------------------------------------------------------------------
 
+#ifdef SEMAPHORE_TEST
+Semaphore *sem;
+#endif
+
 void
 SimpleThread(void* name)
 {
     // Reinterpret arg "name" as a string
     char* threadName = (char*)name;
-    
+
+#ifdef SEMAPHORE_TEST
+    sem->P();
+#endif
     // If the lines dealing with interrupts are commented,
     // the code will behave incorrectly, because
     // printf execution may cause race conditions.
@@ -39,6 +47,9 @@ SimpleThread(void* name)
 	//interrupt->SetLevel(oldLevel);
         currentThread->Yield();
     }
+#ifdef SEMAPHORE_TEST
+    sem->V();
+#endif
     //IntStatus oldLevel = interrupt->SetLevel(IntOff);
     printf(">>> Thread %s has finished\n", threadName);
     //interrupt->SetLevel(oldLevel);
@@ -54,15 +65,19 @@ SimpleThread(void* name)
 void
 ThreadTest()
 {
-    DEBUG('t', "Entering SimpleTest");
-
-    for ( int k=1; k<=10; k++) {
-      char* threadname = new char[100];
-      sprintf(threadname, "Hilo %d", k);
-      Thread* newThread = new Thread (threadname);
-      newThread->Fork (SimpleThread, (void*)threadname);
-    }
+#ifdef SEMAPHORE_TEST
+  DEBUG('t', "Creating semaphore");
+  sem = new Semaphore("ThreadTest semaphore", 3);
+#endif
+  DEBUG('t', "Entering SimpleTest");
+  
+  for ( int k=1; k<=5; k++) {
+    char* threadname = new char[100];
+    sprintf(threadname, "Hilo %d", k);
+    Thread* newThread = new Thread (threadname);
+    newThread->Fork (SimpleThread, (void*)threadname);
+  }
     
-    SimpleThread( (void*)"Hilo 0");
+  SimpleThread( (void*)"Hilo 0");
 }
 

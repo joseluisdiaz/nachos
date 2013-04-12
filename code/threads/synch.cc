@@ -64,16 +64,19 @@ Semaphore::~Semaphore()
 void
 Semaphore::P()
 {
-    IntStatus oldLevel = interrupt->SetLevel(IntOff);	// disable interrupts
-    
-    while (value == 0) { 			// semaphore not available
-	queue->Append(currentThread);		// so go to sleep
-	currentThread->Sleep();
-    } 
-    value--; 					// semaphore available, 
+  DEBUG('s', "*** thread \"%s\" on semaphore \"%s\" does P()\n", currentThread->getName(), name);
+
+  IntStatus oldLevel = interrupt->SetLevel(IntOff);	// disable interrupts
+  
+  while (value == 0) { 			// semaphore not available
+    queue->Append(currentThread);		// so go to sleep
+    currentThread->Sleep();
+  } 
+  value--; 					// semaphore available, 
 						// consume its value
     
-    interrupt->SetLevel(oldLevel);		// re-enable interrupts
+  interrupt->SetLevel(oldLevel);		// re-enable interrupts
+  
 }
 
 //----------------------------------------------------------------------
@@ -87,6 +90,8 @@ Semaphore::P()
 void
 Semaphore::V()
 {
+  DEBUG('s', "*** thread \"%s\" on semaphore \"%s\" does V()\n", currentThread->getName(), name);
+
     Thread *thread;
     IntStatus oldLevel = interrupt->SetLevel(IntOff);
 
@@ -110,9 +115,14 @@ Lock::~Lock() {
 }
 
 void Lock::Acquire() {
-  // pensar un re-adquire
-  lock->P(); 
+  /*
+   * si el hilo que tiene el thread actual invoca nuevamente
+   * Acquire, no causa ningun efecto.
+   */ 
+  if (holder != NULL && isHeldByCurrentThread())
+    return;
   
+  lock->P(); 
   /*
    * Una vez adquirido el semaforo guardamos  
    * referencia del hilo que tomo el lock 
@@ -167,7 +177,7 @@ void Condition::Signal() {
     sleeping--;
     sleepers->V();
   }
-  innerLock->V();
+  innerLock->;
 }
 
 void Condition::Broadcast() {
