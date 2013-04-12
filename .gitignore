@@ -14,3 +14,8 @@
 
 # emacs back
 *~
+
+# nachos binaries
+nachos
+halt
+shel
