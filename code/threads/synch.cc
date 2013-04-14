@@ -68,7 +68,7 @@ Semaphore::P()
 
   IntStatus oldLevel = interrupt->SetLevel(IntOff);	// disable interrupts
   
-  while (value == 0) { 			// semaphore not available
+  while (value == 0) { 			        // semaphore not available
     queue->Append(currentThread);		// so go to sleep
     currentThread->Sleep();
   } 
@@ -115,24 +115,38 @@ Lock::~Lock() {
 }
 
 void Lock::Acquire() {
+  DEBUG('l', "## Hilo \"%s\" intenta capturar lock\"%s\"\n", currentThread->getName(), name);
+
   /*
    * si el hilo que tiene el thread actual invoca nuevamente
    * Acquire, no causa ningun efecto.
    */ 
   if (holder != NULL && isHeldByCurrentThread())
     return;
-  
+
+  /*
+   * Si "holder" es NULL el lock nunca fue adquirido
+   */
+  if (holder != NULL && holderPriority > currentThread->getPriority())
+    holder->setPriority(currentThread->getPriority());
+
   lock->P(); 
   /*
    * Una vez adquirido el semaforo guardamos  
    * referencia del hilo que tomo el lock 
    */
+  holderPriority = currentThread->getPriority();  
   holder = currentThread;
+
 }
 
 void Lock::Release() {
   ASSERT(isHeldByCurrentThread());
+  DEBUG('l', "## Hilo \"%s\" libera  lock\"%s\"\n", currentThread->getName(), name);
+  
+  currentThread->setPriority(holderPriority);
   holder = NULL;
+
   lock->V();    
 }
 
@@ -147,48 +161,123 @@ Condition::Condition(const char* debugName, Lock* conditionLock) {
   sleeping = 0;
   innerLock = new Semaphore("innerLock", 1);
   sleepers = new Semaphore("sleepers", 0);
-
+  handshake = new Semaphore("handshake", 0);
 }
 
 Condition::~Condition() {  
   delete innerLock;
   delete sleepers;
+  delete handshake;
 }
 
 void Condition::Wait() { 
+  DEBUG('c', "#### #### Hilo \"%s\" entrando wait sleepers(%d) en %s\n", currentThread->getName(), sleeping, name);
+
   ASSERT(lock->isHeldByCurrentThread());
 
   innerLock->P();
   sleeping++;
   innerLock->V();
+
+  DEBUG('c', "#### #### Hilo \"%s\" preRelease sleepers(%d) en %s\n", currentThread->getName(), sleeping, name);
   
   lock->Release();
-  /*
-   * pensar el cambio de contexto
-   */
-  sleepers->P();
 
+  DEBUG('c', "#### #### Hilo \"%s\" postRelease sleepers(%d) en %s\n", currentThread->getName(), sleeping, name);
+
+  sleepers->P();
+  handshake->V();
+
+  DEBUG('c', "#### #### Hilo \"%s\" preAcquire sleepers(%d) en %s\n", currentThread->getName(), sleeping, name);
   lock->Acquire();
+  DEBUG('c', "#### #### Hilo \"%s\" postAcquire sleepers(%d) en %s\n", currentThread->getName(), sleeping, name);
+
 }
 
 void Condition::Signal() {
+
+  DEBUG('c', "#### #### Hilo \"%s\" Entrando - Signal sleepers(%d) en %s\n", currentThread->getName(), sleeping, name);
   innerLock->P();
-  if (sleeping > 0) {
+
+
+  if (sleeping > 0 ) {
+
     sleeping--;
     sleepers->V();
+    handshake->P();
   }
-  innerLock->;
+  
+  innerLock->V();
+  DEBUG('c', "#### #### Hilo \"%s\" Saliendo - Signal sleepers(%d) en %s\n", currentThread->getName(), sleeping, name);
 }
 
 void Condition::Broadcast() {
   innerLock->P();
 
+  for (int n = 0; n < sleeping; n++) 
+    sleepers->V();  
+  
   while (sleeping > 0) {
     sleeping--;
-    sleepers->V();
+    handshake->P();
   }
 
   innerLock->V();
 }
 
 
+Puerto::Puerto(const char* debugName) {
+  name = debugName;
+  portLock = new Lock("portLock");
+  freeport = new Condition("condition::freeport", portLock );
+  msg_sent = new Condition("condition::msg_sent", portLock );
+  msg_recv = new Condition("condition::msg_recv", portLock );
+  isFree = true;
+}
+
+Puerto::~Puerto() {
+  delete portLock;
+  delete freeport;
+  delete msg_sent;
+  delete msg_recv;
+}
+
+void Puerto::Send(int mensaje) {
+  DEBUG('p', "#### Hilo \"%s\" entra enviar \"%d\" por el puerto \"%s\"\n", currentThread->getName(), mensaje, name);
+
+  portLock->Acquire();
+  
+  while (!isFree) freeport->Wait();
+
+  isFree = false;
+  msg = mensaje;
+  DEBUG('p', "#### Hilo \"%s\" envio \"%d\" por el puerto \"%s\"\n", currentThread->getName(), mensaje, name);
+
+  msg_sent->Signal();
+
+  msg_recv->Wait();
+
+  portLock->Release();
+
+  DEBUG('p', "#### Hilo \"%s\" sale enviar \"%d\" por el puerto \"%s\"\n", currentThread->getName(), mensaje, name);
+}
+
+void Puerto::Receive(int *mensaje) {
+  DEBUG('p', "#### Hilo \"%s\" entra recibir por el puerto \"%s\"\n", currentThread->getName(),  name);
+
+  portLock->Acquire();
+
+  while (isFree) 
+    msg_sent->Wait();
+
+  *mensaje = msg;
+
+  DEBUG('p', "#### Hilo \"%s\" recibio \"%d\" por el puerto \"%s\"\n", currentThread->getName(), *mensaje, name);
+
+  msg_recv->Signal();
+  isFree = true;
+  freeport->Signal();
+  
+  portLock->Release();
+  DEBUG('p', "#### Hilo \"%s\" sale recibir \"%d\" por el puerto \"%s\"\n", currentThread->getName(), mensaje, name);
+}

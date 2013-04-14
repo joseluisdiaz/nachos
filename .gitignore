@@ -14,8 +14,13 @@
 
 # emacs back
 *~
+*#
 
 # nachos binaries
 nachos
 halt
-shel
+shell
+matmult
+coff2noff
+TAGS
+sort

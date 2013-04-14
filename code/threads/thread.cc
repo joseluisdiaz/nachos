@@ -32,7 +32,7 @@ const unsigned STACK_FENCEPOST = 0xdeadbeef;
 //	"threadName" is an arbitrary string, useful for debugging.
 //----------------------------------------------------------------------
 
-Thread::Thread(const char* threadName)
+Thread::Thread(const char* threadName, bool joinEnabled)
 {
     name = threadName;
     stackTop = NULL;
@@ -41,6 +41,12 @@ Thread::Thread(const char* threadName)
 #ifdef USER_PROGRAM
     space = NULL;
 #endif
+    join = joinEnabled; 
+    priority = 0;
+
+    if (join) 
+      joinPort = new Puerto("joinPort");
+
 }
 
 //----------------------------------------------------------------------
@@ -57,11 +63,15 @@ Thread::Thread(const char* threadName)
 
 Thread::~Thread()
 {
-    DEBUG('t', "Deleting thread \"%s\"\n", name);
 
-    ASSERT(this != currentThread);
-    if (stack != NULL)
-	DeallocBoundedArray((char *) stack, StackSize * sizeof(HostMemoryAddress));
+  if (join)
+    delete joinPort;
+
+  DEBUG('t', "Deleting thread \"%s\"\n", name);
+
+  ASSERT(this != currentThread);
+  if (stack != NULL)
+    DeallocBoundedArray((char *) stack, StackSize * sizeof(HostMemoryAddress));
 }
 
 //----------------------------------------------------------------------
@@ -103,6 +113,14 @@ Thread::Fork(VoidFunctionPtr func, void* arg)
 					// are disabled!
     interrupt->SetLevel(oldLevel);
 }    
+void
+Thread::Join() 
+{
+  if (join) {
+    int i;
+    joinPort->Receive(&i);
+  }
+}
 
 //----------------------------------------------------------------------
 // Thread::CheckOverflow
@@ -148,6 +166,11 @@ Thread::Finish ()
 {
     interrupt->SetLevel(IntOff);		
     ASSERT(this == currentThread);
+
+    setStatus(TERMINATED);
+   
+    if (join) 
+       joinPort->Send(0);
     
     DEBUG('t', "Finishing thread \"%s\"\n", getName());
     

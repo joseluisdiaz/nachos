@@ -7,7 +7,7 @@
 # All rights reserved.  See copyright.h for copyright notice and limitation 
 # of liability and disclaimer of warranty provisions.
 
-DEFINES = -DTHREADS  -DSEMAPHORE_TEST
+DEFINES = -DTHREADS
 INCPATH = -I../threads -I../machine
 HFILES = $(THREAD_H)
 CFILES = $(THREAD_C)
@@ -38,9 +38,9 @@ main.o: ../threads/main.cc /usr/include/stdc-predef.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stdarg.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
  /usr/include/string.h ../threads/system.h ../threads/thread.h \
- ../threads/scheduler.h ../threads/list.h ../machine/interrupt.h \
- ../threads/list.h ../machine/stats.h ../machine/timer.h \
- ../threads/utility.h
+ ../threads/synch.h ../threads/list.h ../threads/scheduler.h \
+ ../machine/interrupt.h ../threads/list.h ../machine/stats.h \
+ ../machine/timer.h ../threads/utility.h
 scheduler.o: ../threads/scheduler.cc /usr/include/stdc-predef.h \
  ../threads/copyright.h ../threads/scheduler.h ../threads/list.h \
  ../threads/utility.h ../machine/sysdep.h ../threads/copyright.h \
@@ -61,11 +61,11 @@ scheduler.o: ../threads/scheduler.cc /usr/include/stdc-predef.h \
  /usr/include/wchar.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stdarg.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
- /usr/include/string.h ../threads/thread.h ../threads/system.h \
- ../machine/interrupt.h ../threads/list.h ../machine/stats.h \
- ../machine/timer.h ../threads/utility.h
+ /usr/include/string.h ../threads/thread.h ../threads/synch.h \
+ ../threads/system.h ../machine/interrupt.h ../threads/list.h \
+ ../machine/stats.h ../machine/timer.h ../threads/utility.h
 synch.o: ../threads/synch.cc /usr/include/stdc-predef.h \
- ../threads/copyright.h ../threads/synch.h ../threads/thread.h \
+ ../threads/copyright.h ../threads/synch.h ../threads/list.h \
  ../threads/utility.h ../machine/sysdep.h ../threads/copyright.h \
  /usr/include/stdlib.h /usr/include/features.h /usr/include/sys/cdefs.h \
  /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
@@ -84,7 +84,7 @@ synch.o: ../threads/synch.cc /usr/include/stdc-predef.h \
  /usr/include/wchar.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stdarg.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
- /usr/include/string.h ../threads/list.h ../threads/system.h \
+ /usr/include/string.h ../threads/system.h ../threads/thread.h \
  ../threads/scheduler.h ../machine/interrupt.h ../threads/list.h \
  ../machine/stats.h ../machine/timer.h ../threads/utility.h
 system.o: ../threads/system.cc /usr/include/stdc-predef.h \
@@ -107,16 +107,16 @@ system.o: ../threads/system.cc /usr/include/stdc-predef.h \
  /usr/include/wchar.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stdarg.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
- /usr/include/string.h ../threads/thread.h ../threads/scheduler.h \
- ../threads/list.h ../machine/interrupt.h ../threads/list.h \
- ../machine/stats.h ../machine/timer.h ../threads/utility.h \
- ../threads/preemptive.h
+ /usr/include/string.h ../threads/thread.h ../threads/synch.h \
+ ../threads/list.h ../threads/scheduler.h ../machine/interrupt.h \
+ ../threads/list.h ../machine/stats.h ../machine/timer.h \
+ ../threads/utility.h ../threads/preemptive.h
 thread.o: ../threads/thread.cc /usr/include/stdc-predef.h \
- ../threads/copyright.h ../threads/thread.h ../threads/utility.h \
- ../machine/sysdep.h ../threads/copyright.h /usr/include/stdlib.h \
- /usr/include/features.h /usr/include/sys/cdefs.h \
- /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
- /usr/include/gnu/stubs-64.h \
+ ../threads/copyright.h ../threads/thread.h ../threads/synch.h \
+ ../threads/list.h ../threads/utility.h ../machine/sysdep.h \
+ ../threads/copyright.h /usr/include/stdlib.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
+ /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stddef.h \
  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
  /usr/include/endian.h /usr/include/bits/endian.h \
@@ -131,10 +131,9 @@ thread.o: ../threads/thread.cc /usr/include/stdc-predef.h \
  /usr/include/wchar.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stdarg.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
- /usr/include/string.h ../threads/switch.h ../threads/synch.h \
- ../threads/list.h ../threads/system.h ../threads/scheduler.h \
- ../machine/interrupt.h ../threads/list.h ../machine/stats.h \
- ../machine/timer.h ../threads/utility.h
+ /usr/include/string.h ../threads/switch.h ../threads/system.h \
+ ../threads/scheduler.h ../machine/interrupt.h ../threads/list.h \
+ ../machine/stats.h ../machine/timer.h ../threads/utility.h
 utility.o: ../threads/utility.cc /usr/include/stdc-predef.h \
  ../threads/copyright.h ../threads/utility.h ../machine/sysdep.h \
  ../threads/copyright.h /usr/include/stdlib.h /usr/include/features.h \
@@ -175,10 +174,10 @@ threadtest.o: ../threads/threadtest.cc /usr/include/stdc-predef.h \
  /usr/include/wchar.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stdarg.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
- /usr/include/string.h ../threads/thread.h ../threads/scheduler.h \
- ../threads/list.h ../machine/interrupt.h ../threads/list.h \
- ../machine/stats.h ../machine/timer.h ../threads/utility.h \
- ../threads/synch.h
+ /usr/include/string.h ../threads/thread.h ../threads/synch.h \
+ ../threads/list.h ../threads/scheduler.h ../machine/interrupt.h \
+ ../threads/list.h ../machine/stats.h ../machine/timer.h \
+ ../threads/utility.h
 interrupt.o: ../machine/interrupt.cc /usr/include/stdc-predef.h \
  ../threads/copyright.h ../machine/interrupt.h ../threads/list.h \
  ../threads/copyright.h ../threads/utility.h ../machine/sysdep.h \
@@ -200,8 +199,9 @@ interrupt.o: ../machine/interrupt.cc /usr/include/stdc-predef.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stdarg.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
  /usr/include/string.h ../threads/system.h ../threads/thread.h \
- ../threads/scheduler.h ../threads/list.h ../machine/interrupt.h \
- ../machine/stats.h ../machine/timer.h ../threads/utility.h
+ ../threads/synch.h ../threads/list.h ../threads/scheduler.h \
+ ../machine/interrupt.h ../machine/stats.h ../machine/timer.h \
+ ../threads/utility.h
 sysdep.o: ../machine/sysdep.cc /usr/include/stdc-predef.h \
  ../threads/copyright.h /usr/include/stdio.h /usr/include/features.h \
  /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
@@ -239,9 +239,9 @@ sysdep.o: ../machine/sysdep.cc /usr/include/stdc-predef.h \
  /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
  ../machine/interrupt.h ../threads/list.h ../threads/copyright.h \
  ../threads/utility.h ../machine/sysdep.h ../threads/system.h \
- ../threads/thread.h ../threads/scheduler.h ../threads/list.h \
- ../machine/interrupt.h ../machine/stats.h ../machine/timer.h \
- ../threads/utility.h
+ ../threads/thread.h ../threads/synch.h ../threads/list.h \
+ ../threads/scheduler.h ../machine/interrupt.h ../machine/stats.h \
+ ../machine/timer.h ../threads/utility.h
 stats.o: ../machine/stats.cc /usr/include/stdc-predef.h \
  ../threads/copyright.h ../threads/utility.h ../threads/copyright.h \
  ../machine/sysdep.h /usr/include/stdlib.h /usr/include/features.h \
@@ -283,9 +283,9 @@ timer.o: ../machine/timer.cc /usr/include/stdc-predef.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stdarg.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
  /usr/include/string.h ../threads/system.h ../threads/utility.h \
- ../threads/thread.h ../threads/scheduler.h ../threads/list.h \
- ../machine/interrupt.h ../threads/list.h ../machine/stats.h \
- ../machine/timer.h
+ ../threads/thread.h ../threads/synch.h ../threads/list.h \
+ ../threads/scheduler.h ../machine/interrupt.h ../threads/list.h \
+ ../machine/stats.h ../machine/timer.h
 preemptive.o: ../threads/preemptive.cc /usr/include/stdc-predef.h \
  ../threads/preemptive.h ../threads/system.h ../threads/copyright.h \
  ../threads/utility.h ../machine/sysdep.h ../threads/copyright.h \
@@ -306,10 +306,10 @@ preemptive.o: ../threads/preemptive.cc /usr/include/stdc-predef.h \
  /usr/include/wchar.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stdarg.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
- /usr/include/string.h ../threads/thread.h ../threads/scheduler.h \
- ../threads/list.h ../machine/interrupt.h ../threads/list.h \
- ../machine/stats.h ../machine/timer.h ../threads/utility.h \
- /usr/include/unistd.h /usr/include/bits/posix_opt.h \
+ /usr/include/string.h ../threads/thread.h ../threads/synch.h \
+ ../threads/list.h ../threads/scheduler.h ../machine/interrupt.h \
+ ../threads/list.h ../machine/stats.h ../machine/timer.h \
+ ../threads/utility.h /usr/include/unistd.h /usr/include/bits/posix_opt.h \
  /usr/include/bits/environments.h /usr/include/bits/confname.h \
  /usr/include/getopt.h /usr/include/sys/ptrace.h /usr/include/sys/wait.h \
  /usr/include/signal.h /usr/include/bits/signum.h \

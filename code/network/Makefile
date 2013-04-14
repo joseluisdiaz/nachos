@@ -26,12 +26,12 @@ include ../Makefile.dep
 #-----------------------------------------------------------------
 # DO NOT DELETE THIS LINE -- make depend uses it
 # DEPENDENCIES MUST END AT END OF FILE
-main.o: ../threads/main.cc ../threads/copyright.h ../threads/utility.h \
- ../machine/sysdep.h ../threads/copyright.h /usr/include/stdlib.h \
- /usr/include/features.h /usr/include/stdc-predef.h \
+main.o: ../threads/main.cc /usr/include/stdc-predef.h \
+ ../threads/copyright.h ../threads/utility.h ../machine/sysdep.h \
+ ../threads/copyright.h /usr/include/stdlib.h /usr/include/features.h \
  /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
  /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stddef.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stddef.h \
  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
  /usr/include/endian.h /usr/include/bits/endian.h \
  /usr/include/bits/byteswap.h /usr/include/bits/types.h \
@@ -43,103 +43,79 @@ main.o: ../threads/main.cc ../threads/copyright.h ../threads/utility.h \
  /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
  /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
  /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stdarg.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/string.h ../threads/system.h ../threads/thread.h \
+ ../threads/synch.h ../threads/list.h ../machine/machine.h \
+ ../threads/utility.h ../machine/translate.h ../machine/disk.h \
+ ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
+ ../threads/scheduler.h ../machine/interrupt.h ../threads/list.h \
+ ../machine/stats.h ../machine/timer.h ../filesys/synchdisk.h \
+ ../machine/disk.h ../threads/synch.h ../network/post.h \
+ ../machine/network.h ../threads/synchlist.h ../threads/thread.h
+scheduler.o: ../threads/scheduler.cc /usr/include/stdc-predef.h \
+ ../threads/copyright.h ../threads/scheduler.h ../threads/list.h \
+ ../threads/utility.h ../machine/sysdep.h ../threads/copyright.h \
+ /usr/include/stdlib.h /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stddef.h \
+ /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+ /usr/include/endian.h /usr/include/bits/endian.h \
+ /usr/include/bits/byteswap.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/bits/byteswap-16.h \
+ /usr/include/xlocale.h /usr/include/sys/types.h /usr/include/time.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
+ /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/string.h ../threads/thread.h ../threads/synch.h \
+ ../machine/machine.h ../threads/utility.h ../machine/translate.h \
+ ../machine/disk.h ../userprog/addrspace.h ../filesys/filesys.h \
+ ../filesys/openfile.h ../threads/system.h ../machine/interrupt.h \
+ ../threads/list.h ../machine/stats.h ../machine/timer.h \
+ ../filesys/synchdisk.h ../machine/disk.h ../threads/synch.h \
+ ../network/post.h ../machine/network.h ../threads/synchlist.h \
+ ../threads/thread.h
+synch.o: ../threads/synch.cc /usr/include/stdc-predef.h \
+ ../threads/copyright.h ../threads/synch.h ../threads/list.h \
+ ../threads/utility.h ../machine/sysdep.h ../threads/copyright.h \
+ /usr/include/stdlib.h /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stddef.h \
+ /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+ /usr/include/endian.h /usr/include/bits/endian.h \
+ /usr/include/bits/byteswap.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/bits/byteswap-16.h \
+ /usr/include/xlocale.h /usr/include/sys/types.h /usr/include/time.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
+ /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stdarg.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
  /usr/include/string.h ../threads/system.h ../threads/thread.h \
  ../machine/machine.h ../threads/utility.h ../machine/translate.h \
  ../machine/disk.h ../userprog/addrspace.h ../filesys/filesys.h \
- ../filesys/openfile.h ../threads/scheduler.h ../threads/list.h \
- ../machine/interrupt.h ../threads/list.h ../machine/stats.h \
- ../machine/timer.h ../filesys/synchdisk.h ../machine/disk.h \
- ../threads/synch.h ../network/post.h ../machine/network.h \
- ../threads/synchlist.h ../threads/synch.h
-scheduler.o: ../threads/scheduler.cc ../threads/copyright.h \
- ../threads/scheduler.h ../threads/list.h ../threads/utility.h \
- ../machine/sysdep.h ../threads/copyright.h /usr/include/stdlib.h \
- /usr/include/features.h /usr/include/stdc-predef.h \
- /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
- /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stddef.h \
- /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
- /usr/include/endian.h /usr/include/bits/endian.h \
- /usr/include/bits/byteswap.h /usr/include/bits/types.h \
- /usr/include/bits/typesizes.h /usr/include/bits/byteswap-16.h \
- /usr/include/xlocale.h /usr/include/sys/types.h /usr/include/time.h \
- /usr/include/sys/select.h /usr/include/bits/select.h \
- /usr/include/bits/sigset.h /usr/include/bits/time.h \
- /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
- /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
- /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
- /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stdarg.h \
- /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
- /usr/include/string.h ../threads/thread.h ../machine/machine.h \
- ../threads/utility.h ../machine/translate.h ../machine/disk.h \
- ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
- ../threads/system.h ../machine/interrupt.h ../threads/list.h \
- ../machine/stats.h ../machine/timer.h ../filesys/synchdisk.h \
- ../machine/disk.h ../threads/synch.h ../network/post.h \
- ../machine/network.h ../threads/synchlist.h ../threads/synch.h
-synch.o: ../threads/synch.cc ../threads/copyright.h ../threads/synch.h \
- ../threads/thread.h ../threads/utility.h ../machine/sysdep.h \
- ../threads/copyright.h /usr/include/stdlib.h /usr/include/features.h \
- /usr/include/stdc-predef.h /usr/include/sys/cdefs.h \
- /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
- /usr/include/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stddef.h \
- /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
- /usr/include/endian.h /usr/include/bits/endian.h \
- /usr/include/bits/byteswap.h /usr/include/bits/types.h \
- /usr/include/bits/typesizes.h /usr/include/bits/byteswap-16.h \
- /usr/include/xlocale.h /usr/include/sys/types.h /usr/include/time.h \
- /usr/include/sys/select.h /usr/include/bits/select.h \
- /usr/include/bits/sigset.h /usr/include/bits/time.h \
- /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
- /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
- /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
- /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stdarg.h \
- /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
- /usr/include/string.h ../machine/machine.h ../threads/utility.h \
- ../machine/translate.h ../machine/disk.h ../userprog/addrspace.h \
- ../filesys/filesys.h ../filesys/openfile.h ../threads/list.h \
- ../threads/system.h ../threads/scheduler.h ../machine/interrupt.h \
- ../threads/list.h ../machine/stats.h ../machine/timer.h \
- ../filesys/synchdisk.h ../machine/disk.h ../threads/synch.h \
- ../network/post.h ../machine/network.h ../threads/synchlist.h
-system.o: ../threads/system.cc ../threads/copyright.h ../threads/system.h \
- ../threads/utility.h ../machine/sysdep.h ../threads/copyright.h \
- /usr/include/stdlib.h /usr/include/features.h /usr/include/stdc-predef.h \
- /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
- /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stddef.h \
- /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
- /usr/include/endian.h /usr/include/bits/endian.h \
- /usr/include/bits/byteswap.h /usr/include/bits/types.h \
- /usr/include/bits/typesizes.h /usr/include/bits/byteswap-16.h \
- /usr/include/xlocale.h /usr/include/sys/types.h /usr/include/time.h \
- /usr/include/sys/select.h /usr/include/bits/select.h \
- /usr/include/bits/sigset.h /usr/include/bits/time.h \
- /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
- /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
- /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
- /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stdarg.h \
- /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
- /usr/include/string.h ../threads/thread.h ../machine/machine.h \
- ../threads/utility.h ../machine/translate.h ../machine/disk.h \
- ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
- ../threads/scheduler.h ../threads/list.h ../machine/interrupt.h \
+ ../filesys/openfile.h ../threads/scheduler.h ../machine/interrupt.h \
  ../threads/list.h ../machine/stats.h ../machine/timer.h \
  ../filesys/synchdisk.h ../machine/disk.h ../threads/synch.h \
  ../network/post.h ../machine/network.h ../threads/synchlist.h \
- ../threads/synch.h ../threads/preemptive.h
-thread.o: ../threads/thread.cc ../threads/copyright.h ../threads/thread.h \
- ../threads/utility.h ../machine/sysdep.h ../threads/copyright.h \
- /usr/include/stdlib.h /usr/include/features.h /usr/include/stdc-predef.h \
- /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
- /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stddef.h \
+ ../threads/thread.h
+system.o: ../threads/system.cc /usr/include/stdc-predef.h \
+ ../threads/copyright.h ../threads/system.h ../threads/utility.h \
+ ../machine/sysdep.h ../threads/copyright.h /usr/include/stdlib.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stddef.h \
  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
  /usr/include/endian.h /usr/include/bits/endian.h \
  /usr/include/bits/byteswap.h /usr/include/bits/types.h \
@@ -151,71 +127,50 @@ thread.o: ../threads/thread.cc ../threads/copyright.h ../threads/thread.h \
  /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
  /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
  /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stdarg.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/string.h ../threads/thread.h ../threads/synch.h \
+ ../threads/list.h ../machine/machine.h ../threads/utility.h \
+ ../machine/translate.h ../machine/disk.h ../userprog/addrspace.h \
+ ../filesys/filesys.h ../filesys/openfile.h ../threads/scheduler.h \
+ ../machine/interrupt.h ../threads/list.h ../machine/stats.h \
+ ../machine/timer.h ../filesys/synchdisk.h ../machine/disk.h \
+ ../threads/synch.h ../network/post.h ../machine/network.h \
+ ../threads/synchlist.h ../threads/thread.h ../threads/preemptive.h
+thread.o: ../threads/thread.cc /usr/include/stdc-predef.h \
+ ../threads/copyright.h ../threads/thread.h ../threads/synch.h \
+ ../threads/list.h ../threads/utility.h ../machine/sysdep.h \
+ ../threads/copyright.h /usr/include/stdlib.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
+ /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stddef.h \
+ /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+ /usr/include/endian.h /usr/include/bits/endian.h \
+ /usr/include/bits/byteswap.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/bits/byteswap-16.h \
+ /usr/include/xlocale.h /usr/include/sys/types.h /usr/include/time.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
+ /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stdarg.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
  /usr/include/string.h ../machine/machine.h ../threads/utility.h \
  ../machine/translate.h ../machine/disk.h ../userprog/addrspace.h \
  ../filesys/filesys.h ../filesys/openfile.h ../threads/switch.h \
- ../threads/synch.h ../threads/list.h ../threads/system.h \
- ../threads/scheduler.h ../machine/interrupt.h ../threads/list.h \
- ../machine/stats.h ../machine/timer.h ../filesys/synchdisk.h \
- ../machine/disk.h ../threads/synch.h ../network/post.h \
- ../machine/network.h ../threads/synchlist.h
-utility.o: ../threads/utility.cc ../threads/copyright.h \
- ../threads/utility.h ../machine/sysdep.h ../threads/copyright.h \
- /usr/include/stdlib.h /usr/include/features.h /usr/include/stdc-predef.h \
- /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
- /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stddef.h \
- /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
- /usr/include/endian.h /usr/include/bits/endian.h \
- /usr/include/bits/byteswap.h /usr/include/bits/types.h \
- /usr/include/bits/typesizes.h /usr/include/bits/byteswap-16.h \
- /usr/include/xlocale.h /usr/include/sys/types.h /usr/include/time.h \
- /usr/include/sys/select.h /usr/include/bits/select.h \
- /usr/include/bits/sigset.h /usr/include/bits/time.h \
- /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
- /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
- /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
- /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stdarg.h \
- /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
- /usr/include/string.h
-threadtest.o: ../threads/threadtest.cc ../threads/copyright.h \
- ../threads/system.h ../threads/utility.h ../machine/sysdep.h \
- ../threads/copyright.h /usr/include/stdlib.h /usr/include/features.h \
- /usr/include/stdc-predef.h /usr/include/sys/cdefs.h \
- /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
- /usr/include/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stddef.h \
- /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
- /usr/include/endian.h /usr/include/bits/endian.h \
- /usr/include/bits/byteswap.h /usr/include/bits/types.h \
- /usr/include/bits/typesizes.h /usr/include/bits/byteswap-16.h \
- /usr/include/xlocale.h /usr/include/sys/types.h /usr/include/time.h \
- /usr/include/sys/select.h /usr/include/bits/select.h \
- /usr/include/bits/sigset.h /usr/include/bits/time.h \
- /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
- /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
- /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
- /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stdarg.h \
- /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
- /usr/include/string.h ../threads/thread.h ../machine/machine.h \
- ../threads/utility.h ../machine/translate.h ../machine/disk.h \
- ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
- ../threads/scheduler.h ../threads/list.h ../machine/interrupt.h \
+ ../threads/system.h ../threads/scheduler.h ../machine/interrupt.h \
  ../threads/list.h ../machine/stats.h ../machine/timer.h \
  ../filesys/synchdisk.h ../machine/disk.h ../threads/synch.h \
  ../network/post.h ../machine/network.h ../threads/synchlist.h \
- ../threads/synch.h
-interrupt.o: ../machine/interrupt.cc ../threads/copyright.h \
- ../machine/interrupt.h ../threads/list.h ../threads/copyright.h \
- ../threads/utility.h ../machine/sysdep.h /usr/include/stdlib.h \
- /usr/include/features.h /usr/include/stdc-predef.h \
+ ../threads/thread.h
+utility.o: ../threads/utility.cc /usr/include/stdc-predef.h \
+ ../threads/copyright.h ../threads/utility.h ../machine/sysdep.h \
+ ../threads/copyright.h /usr/include/stdlib.h /usr/include/features.h \
  /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
  /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stddef.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stddef.h \
  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
  /usr/include/endian.h /usr/include/bits/endian.h \
  /usr/include/bits/byteswap.h /usr/include/bits/types.h \
@@ -227,24 +182,73 @@ interrupt.o: ../machine/interrupt.cc ../threads/copyright.h \
  /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
  /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
  /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stdarg.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/string.h
+threadtest.o: ../threads/threadtest.cc /usr/include/stdc-predef.h \
+ ../threads/copyright.h ../threads/system.h ../threads/utility.h \
+ ../machine/sysdep.h ../threads/copyright.h /usr/include/stdlib.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stddef.h \
+ /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+ /usr/include/endian.h /usr/include/bits/endian.h \
+ /usr/include/bits/byteswap.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/bits/byteswap-16.h \
+ /usr/include/xlocale.h /usr/include/sys/types.h /usr/include/time.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
+ /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/string.h ../threads/thread.h ../threads/synch.h \
+ ../threads/list.h ../machine/machine.h ../threads/utility.h \
+ ../machine/translate.h ../machine/disk.h ../userprog/addrspace.h \
+ ../filesys/filesys.h ../filesys/openfile.h ../threads/scheduler.h \
+ ../machine/interrupt.h ../threads/list.h ../machine/stats.h \
+ ../machine/timer.h ../filesys/synchdisk.h ../machine/disk.h \
+ ../threads/synch.h ../network/post.h ../machine/network.h \
+ ../threads/synchlist.h ../threads/thread.h
+interrupt.o: ../machine/interrupt.cc /usr/include/stdc-predef.h \
+ ../threads/copyright.h ../machine/interrupt.h ../threads/list.h \
+ ../threads/copyright.h ../threads/utility.h ../machine/sysdep.h \
+ /usr/include/stdlib.h /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stddef.h \
+ /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+ /usr/include/endian.h /usr/include/bits/endian.h \
+ /usr/include/bits/byteswap.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/bits/byteswap-16.h \
+ /usr/include/xlocale.h /usr/include/sys/types.h /usr/include/time.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
+ /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stdarg.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
  /usr/include/string.h ../threads/system.h ../threads/thread.h \
- ../machine/machine.h ../threads/utility.h ../machine/translate.h \
- ../machine/disk.h ../userprog/addrspace.h ../filesys/filesys.h \
- ../filesys/openfile.h ../threads/scheduler.h ../threads/list.h \
- ../machine/interrupt.h ../machine/stats.h ../machine/timer.h \
- ../filesys/synchdisk.h ../machine/disk.h ../threads/synch.h \
- ../network/post.h ../machine/network.h ../threads/synchlist.h \
- ../threads/synch.h
-sysdep.o: ../machine/sysdep.cc ../threads/copyright.h \
- /usr/include/stdio.h /usr/include/features.h /usr/include/stdc-predef.h \
+ ../threads/synch.h ../threads/list.h ../machine/machine.h \
+ ../threads/utility.h ../machine/translate.h ../machine/disk.h \
+ ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
+ ../threads/scheduler.h ../machine/interrupt.h ../machine/stats.h \
+ ../machine/timer.h ../filesys/synchdisk.h ../machine/disk.h \
+ ../threads/synch.h ../network/post.h ../machine/network.h \
+ ../threads/synchlist.h ../threads/thread.h
+sysdep.o: ../machine/sysdep.cc /usr/include/stdc-predef.h \
+ ../threads/copyright.h /usr/include/stdio.h /usr/include/features.h \
  /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
  /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stddef.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stddef.h \
  /usr/include/bits/types.h /usr/include/bits/typesizes.h \
  /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stdarg.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stdarg.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
  /usr/include/string.h /usr/include/xlocale.h /usr/include/signal.h \
  /usr/include/bits/sigset.h /usr/include/bits/signum.h \
@@ -274,19 +278,19 @@ sysdep.o: ../machine/sysdep.cc ../threads/copyright.h \
  /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
  ../machine/interrupt.h ../threads/list.h ../threads/copyright.h \
  ../threads/utility.h ../machine/sysdep.h ../threads/system.h \
- ../threads/thread.h ../machine/machine.h ../threads/utility.h \
- ../machine/translate.h ../machine/disk.h ../userprog/addrspace.h \
- ../filesys/filesys.h ../filesys/openfile.h ../threads/scheduler.h \
- ../threads/list.h ../machine/interrupt.h ../machine/stats.h \
- ../machine/timer.h ../filesys/synchdisk.h ../machine/disk.h \
- ../threads/synch.h ../network/post.h ../machine/network.h \
- ../threads/synchlist.h ../threads/synch.h
-stats.o: ../machine/stats.cc ../threads/copyright.h ../threads/utility.h \
- ../threads/copyright.h ../machine/sysdep.h /usr/include/stdlib.h \
- /usr/include/features.h /usr/include/stdc-predef.h \
+ ../threads/thread.h ../threads/synch.h ../threads/list.h \
+ ../machine/machine.h ../threads/utility.h ../machine/translate.h \
+ ../machine/disk.h ../userprog/addrspace.h ../filesys/filesys.h \
+ ../filesys/openfile.h ../threads/scheduler.h ../machine/interrupt.h \
+ ../machine/stats.h ../machine/timer.h ../filesys/synchdisk.h \
+ ../machine/disk.h ../threads/synch.h ../network/post.h \
+ ../machine/network.h ../threads/synchlist.h ../threads/thread.h
+stats.o: ../machine/stats.cc /usr/include/stdc-predef.h \
+ ../threads/copyright.h ../threads/utility.h ../threads/copyright.h \
+ ../machine/sysdep.h /usr/include/stdlib.h /usr/include/features.h \
  /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
  /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stddef.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stddef.h \
  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
  /usr/include/endian.h /usr/include/bits/endian.h \
  /usr/include/bits/byteswap.h /usr/include/bits/types.h \
@@ -298,15 +302,16 @@ stats.o: ../machine/stats.cc ../threads/copyright.h ../threads/utility.h \
  /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
  /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
  /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stdarg.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stdarg.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
  /usr/include/string.h ../machine/stats.h
-timer.o: ../machine/timer.cc ../threads/copyright.h ../machine/timer.h \
- ../threads/utility.h ../threads/copyright.h ../machine/sysdep.h \
- /usr/include/stdlib.h /usr/include/features.h /usr/include/stdc-predef.h \
- /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
- /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stddef.h \
+timer.o: ../machine/timer.cc /usr/include/stdc-predef.h \
+ ../threads/copyright.h ../machine/timer.h ../threads/utility.h \
+ ../threads/copyright.h ../machine/sysdep.h /usr/include/stdlib.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stddef.h \
  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
  /usr/include/endian.h /usr/include/bits/endian.h \
  /usr/include/bits/byteswap.h /usr/include/bits/types.h \
@@ -318,58 +323,58 @@ timer.o: ../machine/timer.cc ../threads/copyright.h ../machine/timer.h \
  /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
  /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
  /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stdarg.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stdarg.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
  /usr/include/string.h ../threads/system.h ../threads/utility.h \
- ../threads/thread.h ../machine/machine.h ../machine/translate.h \
- ../machine/disk.h ../userprog/addrspace.h ../filesys/filesys.h \
- ../filesys/openfile.h ../threads/scheduler.h ../threads/list.h \
+ ../threads/thread.h ../threads/synch.h ../threads/list.h \
+ ../machine/machine.h ../machine/translate.h ../machine/disk.h \
+ ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
+ ../threads/scheduler.h ../machine/interrupt.h ../threads/list.h \
+ ../machine/stats.h ../machine/timer.h ../filesys/synchdisk.h \
+ ../machine/disk.h ../threads/synch.h ../network/post.h \
+ ../machine/network.h ../threads/synchlist.h ../threads/thread.h
+preemptive.o: ../threads/preemptive.cc /usr/include/stdc-predef.h \
+ ../threads/preemptive.h ../threads/system.h ../threads/copyright.h \
+ ../threads/utility.h ../machine/sysdep.h ../threads/copyright.h \
+ /usr/include/stdlib.h /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stddef.h \
+ /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+ /usr/include/endian.h /usr/include/bits/endian.h \
+ /usr/include/bits/byteswap.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/bits/byteswap-16.h \
+ /usr/include/xlocale.h /usr/include/sys/types.h /usr/include/time.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
+ /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/string.h ../threads/thread.h ../threads/synch.h \
+ ../threads/list.h ../machine/machine.h ../threads/utility.h \
+ ../machine/translate.h ../machine/disk.h ../userprog/addrspace.h \
+ ../filesys/filesys.h ../filesys/openfile.h ../threads/scheduler.h \
  ../machine/interrupt.h ../threads/list.h ../machine/stats.h \
  ../machine/timer.h ../filesys/synchdisk.h ../machine/disk.h \
  ../threads/synch.h ../network/post.h ../machine/network.h \
- ../threads/synchlist.h ../threads/synch.h
-preemptive.o: ../threads/preemptive.cc ../threads/preemptive.h \
- ../threads/system.h ../threads/copyright.h ../threads/utility.h \
- ../machine/sysdep.h ../threads/copyright.h /usr/include/stdlib.h \
- /usr/include/features.h /usr/include/stdc-predef.h \
- /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
- /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stddef.h \
- /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
- /usr/include/endian.h /usr/include/bits/endian.h \
- /usr/include/bits/byteswap.h /usr/include/bits/types.h \
- /usr/include/bits/typesizes.h /usr/include/bits/byteswap-16.h \
- /usr/include/xlocale.h /usr/include/sys/types.h /usr/include/time.h \
- /usr/include/sys/select.h /usr/include/bits/select.h \
- /usr/include/bits/sigset.h /usr/include/bits/time.h \
- /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
- /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
- /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
- /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stdarg.h \
- /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
- /usr/include/string.h ../threads/thread.h ../machine/machine.h \
- ../threads/utility.h ../machine/translate.h ../machine/disk.h \
- ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
- ../threads/scheduler.h ../threads/list.h ../machine/interrupt.h \
- ../threads/list.h ../machine/stats.h ../machine/timer.h \
- ../filesys/synchdisk.h ../machine/disk.h ../threads/synch.h \
- ../network/post.h ../machine/network.h ../threads/synchlist.h \
- ../threads/synch.h /usr/include/unistd.h /usr/include/bits/posix_opt.h \
- /usr/include/bits/environments.h /usr/include/bits/confname.h \
- /usr/include/getopt.h /usr/include/sys/ptrace.h /usr/include/sys/wait.h \
- /usr/include/signal.h /usr/include/bits/signum.h \
- /usr/include/bits/siginfo.h /usr/include/bits/sigaction.h \
- /usr/include/bits/sigcontext.h /usr/include/bits/sigstack.h \
- /usr/include/sys/ucontext.h /usr/include/bits/sigthread.h \
- /usr/include/sys/user.h
-addrspace.o: ../userprog/addrspace.cc ../threads/copyright.h \
- ../threads/system.h ../threads/copyright.h ../threads/utility.h \
- ../machine/sysdep.h /usr/include/stdlib.h /usr/include/features.h \
- /usr/include/stdc-predef.h /usr/include/sys/cdefs.h \
+ ../threads/synchlist.h ../threads/thread.h /usr/include/unistd.h \
+ /usr/include/bits/posix_opt.h /usr/include/bits/environments.h \
+ /usr/include/bits/confname.h /usr/include/getopt.h \
+ /usr/include/sys/ptrace.h /usr/include/sys/wait.h /usr/include/signal.h \
+ /usr/include/bits/signum.h /usr/include/bits/siginfo.h \
+ /usr/include/bits/sigaction.h /usr/include/bits/sigcontext.h \
+ /usr/include/bits/sigstack.h /usr/include/sys/ucontext.h \
+ /usr/include/bits/sigthread.h /usr/include/sys/user.h
+addrspace.o: ../userprog/addrspace.cc /usr/include/stdc-predef.h \
+ ../threads/copyright.h ../threads/system.h ../threads/copyright.h \
+ ../threads/utility.h ../machine/sysdep.h /usr/include/stdlib.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
  /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
  /usr/include/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stddef.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stddef.h \
  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
  /usr/include/endian.h /usr/include/bits/endian.h \
  /usr/include/bits/byteswap.h /usr/include/bits/types.h \
@@ -381,23 +386,24 @@ addrspace.o: ../userprog/addrspace.cc ../threads/copyright.h \
  /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
  /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
  /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stdarg.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stdarg.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
- /usr/include/string.h ../threads/thread.h ../machine/machine.h \
- ../threads/utility.h ../machine/translate.h ../machine/disk.h \
- ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
- ../threads/scheduler.h ../threads/list.h ../machine/interrupt.h \
- ../threads/list.h ../machine/stats.h ../machine/timer.h \
- ../filesys/synchdisk.h ../machine/disk.h ../threads/synch.h \
- ../network/post.h ../machine/network.h ../threads/synchlist.h \
- ../threads/synch.h ../userprog/addrspace.h ../bin/noff.h
-bitmap.o: ../userprog/bitmap.cc ../threads/copyright.h \
- ../userprog/bitmap.h ../threads/utility.h ../threads/copyright.h \
- ../machine/sysdep.h /usr/include/stdlib.h /usr/include/features.h \
- /usr/include/stdc-predef.h /usr/include/sys/cdefs.h \
+ /usr/include/string.h ../threads/thread.h ../threads/synch.h \
+ ../threads/list.h ../machine/machine.h ../threads/utility.h \
+ ../machine/translate.h ../machine/disk.h ../userprog/addrspace.h \
+ ../filesys/filesys.h ../filesys/openfile.h ../threads/scheduler.h \
+ ../machine/interrupt.h ../threads/list.h ../machine/stats.h \
+ ../machine/timer.h ../filesys/synchdisk.h ../machine/disk.h \
+ ../threads/synch.h ../network/post.h ../machine/network.h \
+ ../threads/synchlist.h ../threads/thread.h ../userprog/addrspace.h \
+ ../bin/noff.h
+bitmap.o: ../userprog/bitmap.cc /usr/include/stdc-predef.h \
+ ../threads/copyright.h ../userprog/bitmap.h ../threads/utility.h \
+ ../threads/copyright.h ../machine/sysdep.h /usr/include/stdlib.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
  /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
  /usr/include/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stddef.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stddef.h \
  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
  /usr/include/endian.h /usr/include/bits/endian.h \
  /usr/include/bits/byteswap.h /usr/include/bits/types.h \
@@ -409,16 +415,16 @@ bitmap.o: ../userprog/bitmap.cc ../threads/copyright.h \
  /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
  /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
  /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stdarg.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stdarg.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
  /usr/include/string.h ../filesys/openfile.h
-exception.o: ../userprog/exception.cc ../threads/copyright.h \
- ../threads/system.h ../threads/copyright.h ../threads/utility.h \
- ../machine/sysdep.h /usr/include/stdlib.h /usr/include/features.h \
- /usr/include/stdc-predef.h /usr/include/sys/cdefs.h \
+exception.o: ../userprog/exception.cc /usr/include/stdc-predef.h \
+ ../threads/copyright.h ../threads/system.h ../threads/copyright.h \
+ ../threads/utility.h ../machine/sysdep.h /usr/include/stdlib.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
  /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
  /usr/include/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stddef.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stddef.h \
  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
  /usr/include/endian.h /usr/include/bits/endian.h \
  /usr/include/bits/byteswap.h /usr/include/bits/types.h \
@@ -430,79 +436,23 @@ exception.o: ../userprog/exception.cc ../threads/copyright.h \
  /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
  /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
  /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stdarg.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stdarg.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
- /usr/include/string.h ../threads/thread.h ../machine/machine.h \
- ../threads/utility.h ../machine/translate.h ../machine/disk.h \
- ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
- ../threads/scheduler.h ../threads/list.h ../machine/interrupt.h \
- ../threads/list.h ../machine/stats.h ../machine/timer.h \
- ../filesys/synchdisk.h ../machine/disk.h ../threads/synch.h \
- ../network/post.h ../machine/network.h ../threads/synchlist.h \
- ../threads/synch.h ../userprog/syscall.h
-progtest.o: ../userprog/progtest.cc ../threads/copyright.h \
- ../threads/system.h ../threads/copyright.h ../threads/utility.h \
- ../machine/sysdep.h /usr/include/stdlib.h /usr/include/features.h \
- /usr/include/stdc-predef.h /usr/include/sys/cdefs.h \
- /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
- /usr/include/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stddef.h \
- /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
- /usr/include/endian.h /usr/include/bits/endian.h \
- /usr/include/bits/byteswap.h /usr/include/bits/types.h \
- /usr/include/bits/typesizes.h /usr/include/bits/byteswap-16.h \
- /usr/include/xlocale.h /usr/include/sys/types.h /usr/include/time.h \
- /usr/include/sys/select.h /usr/include/bits/select.h \
- /usr/include/bits/sigset.h /usr/include/bits/time.h \
- /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
- /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
- /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
- /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stdarg.h \
- /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
- /usr/include/string.h ../threads/thread.h ../machine/machine.h \
- ../threads/utility.h ../machine/translate.h ../machine/disk.h \
- ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
- ../threads/scheduler.h ../threads/list.h ../machine/interrupt.h \
- ../threads/list.h ../machine/stats.h ../machine/timer.h \
- ../filesys/synchdisk.h ../machine/disk.h ../threads/synch.h \
- ../network/post.h ../machine/network.h ../threads/synchlist.h \
- ../threads/synch.h ../machine/console.h ../userprog/addrspace.h
-console.o: ../machine/console.cc ../threads/copyright.h \
- ../machine/console.h ../threads/utility.h ../threads/copyright.h \
- ../machine/sysdep.h /usr/include/stdlib.h /usr/include/features.h \
- /usr/include/stdc-predef.h /usr/include/sys/cdefs.h \
- /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
- /usr/include/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stddef.h \
- /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
- /usr/include/endian.h /usr/include/bits/endian.h \
- /usr/include/bits/byteswap.h /usr/include/bits/types.h \
- /usr/include/bits/typesizes.h /usr/include/bits/byteswap-16.h \
- /usr/include/xlocale.h /usr/include/sys/types.h /usr/include/time.h \
- /usr/include/sys/select.h /usr/include/bits/select.h \
- /usr/include/bits/sigset.h /usr/include/bits/time.h \
- /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
- /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
- /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
- /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stdarg.h \
- /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
- /usr/include/string.h ../threads/system.h ../threads/utility.h \
- ../threads/thread.h ../machine/machine.h ../machine/translate.h \
- ../machine/disk.h ../userprog/addrspace.h ../filesys/filesys.h \
- ../filesys/openfile.h ../threads/scheduler.h ../threads/list.h \
+ /usr/include/string.h ../threads/thread.h ../threads/synch.h \
+ ../threads/list.h ../machine/machine.h ../threads/utility.h \
+ ../machine/translate.h ../machine/disk.h ../userprog/addrspace.h \
+ ../filesys/filesys.h ../filesys/openfile.h ../threads/scheduler.h \
  ../machine/interrupt.h ../threads/list.h ../machine/stats.h \
  ../machine/timer.h ../filesys/synchdisk.h ../machine/disk.h \
  ../threads/synch.h ../network/post.h ../machine/network.h \
- ../threads/synchlist.h ../threads/synch.h
-machine.o: ../machine/machine.cc ../threads/copyright.h \
- ../machine/machine.h ../threads/utility.h ../threads/copyright.h \
- ../machine/sysdep.h /usr/include/stdlib.h /usr/include/features.h \
- /usr/include/stdc-predef.h /usr/include/sys/cdefs.h \
+ ../threads/synchlist.h ../threads/thread.h ../userprog/syscall.h
+progtest.o: ../userprog/progtest.cc /usr/include/stdc-predef.h \
+ ../threads/copyright.h ../threads/system.h ../threads/copyright.h \
+ ../threads/utility.h ../machine/sysdep.h /usr/include/stdlib.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
  /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
  /usr/include/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stddef.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stddef.h \
  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
  /usr/include/endian.h /usr/include/bits/endian.h \
  /usr/include/bits/byteswap.h /usr/include/bits/types.h \
@@ -514,23 +464,80 @@ machine.o: ../machine/machine.cc ../threads/copyright.h \
  /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
  /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
  /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stdarg.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/string.h ../threads/thread.h ../threads/synch.h \
+ ../threads/list.h ../machine/machine.h ../threads/utility.h \
+ ../machine/translate.h ../machine/disk.h ../userprog/addrspace.h \
+ ../filesys/filesys.h ../filesys/openfile.h ../threads/scheduler.h \
+ ../machine/interrupt.h ../threads/list.h ../machine/stats.h \
+ ../machine/timer.h ../filesys/synchdisk.h ../machine/disk.h \
+ ../threads/synch.h ../network/post.h ../machine/network.h \
+ ../threads/synchlist.h ../threads/thread.h ../machine/console.h \
+ ../userprog/addrspace.h
+console.o: ../machine/console.cc /usr/include/stdc-predef.h \
+ ../threads/copyright.h ../machine/console.h ../threads/utility.h \
+ ../threads/copyright.h ../machine/sysdep.h /usr/include/stdlib.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stddef.h \
+ /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+ /usr/include/endian.h /usr/include/bits/endian.h \
+ /usr/include/bits/byteswap.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/bits/byteswap-16.h \
+ /usr/include/xlocale.h /usr/include/sys/types.h /usr/include/time.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
+ /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/string.h ../threads/system.h ../threads/utility.h \
+ ../threads/thread.h ../threads/synch.h ../threads/list.h \
+ ../machine/machine.h ../machine/translate.h ../machine/disk.h \
+ ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
+ ../threads/scheduler.h ../machine/interrupt.h ../threads/list.h \
+ ../machine/stats.h ../machine/timer.h ../filesys/synchdisk.h \
+ ../machine/disk.h ../threads/synch.h ../network/post.h \
+ ../machine/network.h ../threads/synchlist.h ../threads/thread.h
+machine.o: ../machine/machine.cc /usr/include/stdc-predef.h \
+ ../threads/copyright.h ../machine/machine.h ../threads/utility.h \
+ ../threads/copyright.h ../machine/sysdep.h /usr/include/stdlib.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stddef.h \
+ /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+ /usr/include/endian.h /usr/include/bits/endian.h \
+ /usr/include/bits/byteswap.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/bits/byteswap-16.h \
+ /usr/include/xlocale.h /usr/include/sys/types.h /usr/include/time.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
+ /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stdarg.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
  /usr/include/string.h ../machine/translate.h ../machine/disk.h \
  ../threads/system.h ../threads/utility.h ../threads/thread.h \
- ../machine/machine.h ../userprog/addrspace.h ../filesys/filesys.h \
- ../filesys/openfile.h ../threads/scheduler.h ../threads/list.h \
- ../machine/interrupt.h ../threads/list.h ../machine/stats.h \
- ../machine/timer.h ../filesys/synchdisk.h ../machine/disk.h \
- ../threads/synch.h ../network/post.h ../machine/network.h \
- ../threads/synchlist.h ../threads/synch.h
-mipssim.o: ../machine/mipssim.cc ../threads/copyright.h \
- ../machine/machine.h ../threads/utility.h ../threads/copyright.h \
- ../machine/sysdep.h /usr/include/stdlib.h /usr/include/features.h \
- /usr/include/stdc-predef.h /usr/include/sys/cdefs.h \
+ ../threads/synch.h ../threads/list.h ../machine/machine.h \
+ ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
+ ../threads/scheduler.h ../machine/interrupt.h ../threads/list.h \
+ ../machine/stats.h ../machine/timer.h ../filesys/synchdisk.h \
+ ../machine/disk.h ../threads/synch.h ../network/post.h \
+ ../machine/network.h ../threads/synchlist.h ../threads/thread.h
+mipssim.o: ../machine/mipssim.cc /usr/include/stdc-predef.h \
+ ../threads/copyright.h ../machine/machine.h ../threads/utility.h \
+ ../threads/copyright.h ../machine/sysdep.h /usr/include/stdlib.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
  /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
  /usr/include/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stddef.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stddef.h \
  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
  /usr/include/endian.h /usr/include/bits/endian.h \
  /usr/include/bits/byteswap.h /usr/include/bits/types.h \
@@ -542,23 +549,24 @@ mipssim.o: ../machine/mipssim.cc ../threads/copyright.h \
  /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
  /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
  /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stdarg.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stdarg.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
  /usr/include/string.h ../machine/translate.h ../machine/disk.h \
  ../machine/mipssim.h ../threads/system.h ../threads/utility.h \
- ../threads/thread.h ../machine/machine.h ../userprog/addrspace.h \
- ../filesys/filesys.h ../filesys/openfile.h ../threads/scheduler.h \
- ../threads/list.h ../machine/interrupt.h ../threads/list.h \
- ../machine/stats.h ../machine/timer.h ../filesys/synchdisk.h \
- ../machine/disk.h ../threads/synch.h ../network/post.h \
- ../machine/network.h ../threads/synchlist.h ../threads/synch.h
-translate.o: ../machine/translate.cc ../threads/copyright.h \
- ../machine/machine.h ../threads/utility.h ../threads/copyright.h \
- ../machine/sysdep.h /usr/include/stdlib.h /usr/include/features.h \
- /usr/include/stdc-predef.h /usr/include/sys/cdefs.h \
+ ../threads/thread.h ../threads/synch.h ../threads/list.h \
+ ../machine/machine.h ../userprog/addrspace.h ../filesys/filesys.h \
+ ../filesys/openfile.h ../threads/scheduler.h ../machine/interrupt.h \
+ ../threads/list.h ../machine/stats.h ../machine/timer.h \
+ ../filesys/synchdisk.h ../machine/disk.h ../threads/synch.h \
+ ../network/post.h ../machine/network.h ../threads/synchlist.h \
+ ../threads/thread.h
+translate.o: ../machine/translate.cc /usr/include/stdc-predef.h \
+ ../threads/copyright.h ../machine/machine.h ../threads/utility.h \
+ ../threads/copyright.h ../machine/sysdep.h /usr/include/stdlib.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
  /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
  /usr/include/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stddef.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stddef.h \
  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
  /usr/include/endian.h /usr/include/bits/endian.h \
  /usr/include/bits/byteswap.h /usr/include/bits/types.h \
@@ -570,22 +578,22 @@ translate.o: ../machine/translate.cc ../threads/copyright.h \
  /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
  /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
  /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stdarg.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stdarg.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
  /usr/include/string.h ../machine/translate.h ../machine/disk.h \
  ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
  ../threads/system.h ../threads/utility.h ../threads/thread.h \
- ../machine/machine.h ../threads/scheduler.h ../threads/list.h \
- ../machine/interrupt.h ../threads/list.h ../machine/stats.h \
- ../machine/timer.h ../filesys/synchdisk.h ../machine/disk.h \
- ../threads/synch.h ../network/post.h ../machine/network.h \
- ../threads/synchlist.h ../threads/synch.h
-directory.o: ../filesys/directory.cc ../threads/copyright.h \
- ../threads/utility.h ../threads/copyright.h ../machine/sysdep.h \
- /usr/include/stdlib.h /usr/include/features.h /usr/include/stdc-predef.h \
+ ../threads/synch.h ../threads/list.h ../machine/machine.h \
+ ../threads/scheduler.h ../machine/interrupt.h ../threads/list.h \
+ ../machine/stats.h ../machine/timer.h ../filesys/synchdisk.h \
+ ../machine/disk.h ../threads/synch.h ../network/post.h \
+ ../machine/network.h ../threads/synchlist.h ../threads/thread.h
+directory.o: ../filesys/directory.cc /usr/include/stdc-predef.h \
+ ../threads/copyright.h ../threads/utility.h ../threads/copyright.h \
+ ../machine/sysdep.h /usr/include/stdlib.h /usr/include/features.h \
  /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
  /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stddef.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stddef.h \
  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
  /usr/include/endian.h /usr/include/bits/endian.h \
  /usr/include/bits/byteswap.h /usr/include/bits/types.h \
@@ -597,18 +605,18 @@ directory.o: ../filesys/directory.cc ../threads/copyright.h \
  /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
  /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
  /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stdarg.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stdarg.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
  /usr/include/string.h ../filesys/filehdr.h ../machine/disk.h \
  ../userprog/bitmap.h ../filesys/openfile.h ../filesys/directory.h \
  ../filesys/openfile.h
-filehdr.o: ../filesys/filehdr.cc ../threads/copyright.h \
- ../threads/system.h ../threads/copyright.h ../threads/utility.h \
- ../machine/sysdep.h /usr/include/stdlib.h /usr/include/features.h \
- /usr/include/stdc-predef.h /usr/include/sys/cdefs.h \
+filehdr.o: ../filesys/filehdr.cc /usr/include/stdc-predef.h \
+ ../threads/copyright.h ../threads/system.h ../threads/copyright.h \
+ ../threads/utility.h ../machine/sysdep.h /usr/include/stdlib.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
  /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
  /usr/include/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stddef.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stddef.h \
  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
  /usr/include/endian.h /usr/include/bits/endian.h \
  /usr/include/bits/byteswap.h /usr/include/bits/types.h \
@@ -620,23 +628,24 @@ filehdr.o: ../filesys/filehdr.cc ../threads/copyright.h \
  /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
  /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
  /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stdarg.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stdarg.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
- /usr/include/string.h ../threads/thread.h ../machine/machine.h \
- ../threads/utility.h ../machine/translate.h ../machine/disk.h \
- ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
- ../threads/scheduler.h ../threads/list.h ../machine/interrupt.h \
- ../threads/list.h ../machine/stats.h ../machine/timer.h \
- ../filesys/synchdisk.h ../machine/disk.h ../threads/synch.h \
- ../network/post.h ../machine/network.h ../threads/synchlist.h \
- ../threads/synch.h ../filesys/filehdr.h ../userprog/bitmap.h \
- ../filesys/openfile.h
-filesys.o: ../filesys/filesys.cc ../threads/copyright.h ../machine/disk.h \
- ../threads/utility.h ../threads/copyright.h ../machine/sysdep.h \
- /usr/include/stdlib.h /usr/include/features.h /usr/include/stdc-predef.h \
- /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
- /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stddef.h \
+ /usr/include/string.h ../threads/thread.h ../threads/synch.h \
+ ../threads/list.h ../machine/machine.h ../threads/utility.h \
+ ../machine/translate.h ../machine/disk.h ../userprog/addrspace.h \
+ ../filesys/filesys.h ../filesys/openfile.h ../threads/scheduler.h \
+ ../machine/interrupt.h ../threads/list.h ../machine/stats.h \
+ ../machine/timer.h ../filesys/synchdisk.h ../machine/disk.h \
+ ../threads/synch.h ../network/post.h ../machine/network.h \
+ ../threads/synchlist.h ../threads/thread.h ../filesys/filehdr.h \
+ ../userprog/bitmap.h ../filesys/openfile.h
+filesys.o: ../filesys/filesys.cc /usr/include/stdc-predef.h \
+ ../threads/copyright.h ../machine/disk.h ../threads/utility.h \
+ ../threads/copyright.h ../machine/sysdep.h /usr/include/stdlib.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stddef.h \
  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
  /usr/include/endian.h /usr/include/bits/endian.h \
  /usr/include/bits/byteswap.h /usr/include/bits/types.h \
@@ -648,17 +657,17 @@ filesys.o: ../filesys/filesys.cc ../threads/copyright.h ../machine/disk.h \
  /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
  /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
  /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stdarg.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stdarg.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
  /usr/include/string.h ../userprog/bitmap.h ../filesys/openfile.h \
  ../filesys/directory.h ../filesys/openfile.h ../filesys/filehdr.h \
  ../filesys/filesys.h
-fstest.o: ../filesys/fstest.cc ../threads/copyright.h \
- ../threads/utility.h ../threads/copyright.h ../machine/sysdep.h \
- /usr/include/stdlib.h /usr/include/features.h /usr/include/stdc-predef.h \
+fstest.o: ../filesys/fstest.cc /usr/include/stdc-predef.h \
+ ../threads/copyright.h ../threads/utility.h ../threads/copyright.h \
+ ../machine/sysdep.h /usr/include/stdlib.h /usr/include/features.h \
  /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
  /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stddef.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stddef.h \
  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
  /usr/include/endian.h /usr/include/bits/endian.h \
  /usr/include/bits/byteswap.h /usr/include/bits/types.h \
@@ -670,24 +679,24 @@ fstest.o: ../filesys/fstest.cc ../threads/copyright.h \
  /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
  /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
  /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stdarg.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stdarg.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
  /usr/include/string.h ../filesys/filesys.h ../filesys/openfile.h \
  ../threads/system.h ../threads/utility.h ../threads/thread.h \
- ../machine/machine.h ../machine/translate.h ../machine/disk.h \
- ../userprog/addrspace.h ../filesys/filesys.h ../threads/scheduler.h \
- ../threads/list.h ../machine/interrupt.h ../threads/list.h \
- ../machine/stats.h ../machine/timer.h ../filesys/synchdisk.h \
- ../machine/disk.h ../threads/synch.h ../network/post.h \
- ../machine/network.h ../threads/synchlist.h ../threads/synch.h \
+ ../threads/synch.h ../threads/list.h ../machine/machine.h \
+ ../machine/translate.h ../machine/disk.h ../userprog/addrspace.h \
+ ../filesys/filesys.h ../threads/scheduler.h ../machine/interrupt.h \
+ ../threads/list.h ../machine/stats.h ../machine/timer.h \
+ ../filesys/synchdisk.h ../machine/disk.h ../threads/synch.h \
+ ../network/post.h ../machine/network.h ../threads/synchlist.h \
  ../threads/thread.h
-openfile.o: ../filesys/openfile.cc ../threads/copyright.h \
- ../filesys/filehdr.h ../machine/disk.h ../threads/utility.h \
- ../threads/copyright.h ../machine/sysdep.h /usr/include/stdlib.h \
- /usr/include/features.h /usr/include/stdc-predef.h \
- /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
- /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stddef.h \
+openfile.o: ../filesys/openfile.cc /usr/include/stdc-predef.h \
+ ../threads/copyright.h ../filesys/filehdr.h ../machine/disk.h \
+ ../threads/utility.h ../threads/copyright.h ../machine/sysdep.h \
+ /usr/include/stdlib.h /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stddef.h \
  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
  /usr/include/endian.h /usr/include/bits/endian.h \
  /usr/include/bits/byteswap.h /usr/include/bits/types.h \
@@ -699,46 +708,24 @@ openfile.o: ../filesys/openfile.cc ../threads/copyright.h \
  /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
  /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
  /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stdarg.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stdarg.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
  /usr/include/string.h ../userprog/bitmap.h ../filesys/openfile.h \
  ../filesys/openfile.h ../threads/system.h ../threads/utility.h \
- ../threads/thread.h ../machine/machine.h ../machine/translate.h \
- ../machine/disk.h ../userprog/addrspace.h ../filesys/filesys.h \
- ../threads/scheduler.h ../threads/list.h ../machine/interrupt.h \
- ../threads/list.h ../machine/stats.h ../machine/timer.h \
- ../filesys/synchdisk.h ../threads/synch.h ../network/post.h \
- ../machine/network.h ../threads/synchlist.h ../threads/synch.h
-synchdisk.o: ../filesys/synchdisk.cc ../threads/copyright.h \
- ../filesys/synchdisk.h ../machine/disk.h ../threads/utility.h \
- ../threads/copyright.h ../machine/sysdep.h /usr/include/stdlib.h \
- /usr/include/features.h /usr/include/stdc-predef.h \
- /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
- /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stddef.h \
- /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
- /usr/include/endian.h /usr/include/bits/endian.h \
- /usr/include/bits/byteswap.h /usr/include/bits/types.h \
- /usr/include/bits/typesizes.h /usr/include/bits/byteswap-16.h \
- /usr/include/xlocale.h /usr/include/sys/types.h /usr/include/time.h \
- /usr/include/sys/select.h /usr/include/bits/select.h \
- /usr/include/bits/sigset.h /usr/include/bits/time.h \
- /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
- /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
- /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
- /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stdarg.h \
- /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
- /usr/include/string.h ../threads/synch.h ../threads/thread.h \
- ../threads/utility.h ../machine/machine.h ../machine/translate.h \
- ../machine/disk.h ../userprog/addrspace.h ../filesys/filesys.h \
- ../filesys/openfile.h ../threads/list.h
-disk.o: ../machine/disk.cc ../threads/copyright.h ../machine/disk.h \
+ ../threads/thread.h ../threads/synch.h ../threads/list.h \
+ ../machine/machine.h ../machine/translate.h ../machine/disk.h \
+ ../userprog/addrspace.h ../filesys/filesys.h ../threads/scheduler.h \
+ ../machine/interrupt.h ../threads/list.h ../machine/stats.h \
+ ../machine/timer.h ../filesys/synchdisk.h ../threads/synch.h \
+ ../network/post.h ../machine/network.h ../threads/synchlist.h \
+ ../threads/thread.h
+synchdisk.o: ../filesys/synchdisk.cc /usr/include/stdc-predef.h \
+ ../threads/copyright.h ../filesys/synchdisk.h ../machine/disk.h \
  ../threads/utility.h ../threads/copyright.h ../machine/sysdep.h \
- /usr/include/stdlib.h /usr/include/features.h /usr/include/stdc-predef.h \
- /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
- /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stddef.h \
+ /usr/include/stdlib.h /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stddef.h \
  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
  /usr/include/endian.h /usr/include/bits/endian.h \
  /usr/include/bits/byteswap.h /usr/include/bits/types.h \
@@ -750,23 +737,45 @@ disk.o: ../machine/disk.cc ../threads/copyright.h ../machine/disk.h \
  /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
  /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
  /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stdarg.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/string.h ../threads/synch.h ../threads/list.h \
+ ../threads/utility.h
+disk.o: ../machine/disk.cc /usr/include/stdc-predef.h \
+ ../threads/copyright.h ../machine/disk.h ../threads/utility.h \
+ ../threads/copyright.h ../machine/sysdep.h /usr/include/stdlib.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stddef.h \
+ /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+ /usr/include/endian.h /usr/include/bits/endian.h \
+ /usr/include/bits/byteswap.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/bits/byteswap-16.h \
+ /usr/include/xlocale.h /usr/include/sys/types.h /usr/include/time.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
+ /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stdarg.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
  /usr/include/string.h ../threads/system.h ../threads/utility.h \
- ../threads/thread.h ../machine/machine.h ../machine/translate.h \
- ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
- ../threads/scheduler.h ../threads/list.h ../machine/interrupt.h \
- ../threads/list.h ../machine/stats.h ../machine/timer.h \
- ../filesys/synchdisk.h ../machine/disk.h ../threads/synch.h \
- ../network/post.h ../machine/network.h ../threads/synchlist.h \
- ../threads/synch.h
-nettest.o: ../network/nettest.cc ../threads/copyright.h \
- ../threads/system.h ../threads/copyright.h ../threads/utility.h \
- ../machine/sysdep.h /usr/include/stdlib.h /usr/include/features.h \
- /usr/include/stdc-predef.h /usr/include/sys/cdefs.h \
+ ../threads/thread.h ../threads/synch.h ../threads/list.h \
+ ../machine/machine.h ../machine/translate.h ../userprog/addrspace.h \
+ ../filesys/filesys.h ../filesys/openfile.h ../threads/scheduler.h \
+ ../machine/interrupt.h ../threads/list.h ../machine/stats.h \
+ ../machine/timer.h ../filesys/synchdisk.h ../machine/disk.h \
+ ../threads/synch.h ../network/post.h ../machine/network.h \
+ ../threads/synchlist.h ../threads/thread.h
+nettest.o: ../network/nettest.cc /usr/include/stdc-predef.h \
+ ../threads/copyright.h ../threads/system.h ../threads/copyright.h \
+ ../threads/utility.h ../machine/sysdep.h /usr/include/stdlib.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
  /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
  /usr/include/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stddef.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stddef.h \
  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
  /usr/include/endian.h /usr/include/bits/endian.h \
  /usr/include/bits/byteswap.h /usr/include/bits/types.h \
@@ -778,23 +787,23 @@ nettest.o: ../network/nettest.cc ../threads/copyright.h \
  /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
  /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
  /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stdarg.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stdarg.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
- /usr/include/string.h ../threads/thread.h ../machine/machine.h \
- ../threads/utility.h ../machine/translate.h ../machine/disk.h \
- ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
- ../threads/scheduler.h ../threads/list.h ../machine/interrupt.h \
- ../threads/list.h ../machine/stats.h ../machine/timer.h \
- ../filesys/synchdisk.h ../machine/disk.h ../threads/synch.h \
- ../network/post.h ../machine/network.h ../threads/synchlist.h \
- ../threads/synch.h ../network/post.h
-post.o: ../network/post.cc ../threads/copyright.h ../network/post.h \
- ../machine/network.h ../threads/utility.h ../threads/copyright.h \
- ../machine/sysdep.h /usr/include/stdlib.h /usr/include/features.h \
- /usr/include/stdc-predef.h /usr/include/sys/cdefs.h \
+ /usr/include/string.h ../threads/thread.h ../threads/synch.h \
+ ../threads/list.h ../machine/machine.h ../threads/utility.h \
+ ../machine/translate.h ../machine/disk.h ../userprog/addrspace.h \
+ ../filesys/filesys.h ../filesys/openfile.h ../threads/scheduler.h \
+ ../machine/interrupt.h ../threads/list.h ../machine/stats.h \
+ ../machine/timer.h ../filesys/synchdisk.h ../machine/disk.h \
+ ../threads/synch.h ../network/post.h ../machine/network.h \
+ ../threads/synchlist.h ../threads/thread.h ../network/post.h
+post.o: ../network/post.cc /usr/include/stdc-predef.h \
+ ../threads/copyright.h ../network/post.h ../machine/network.h \
+ ../threads/utility.h ../threads/copyright.h ../machine/sysdep.h \
+ /usr/include/stdlib.h /usr/include/features.h /usr/include/sys/cdefs.h \
  /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
  /usr/include/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stddef.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stddef.h \
  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
  /usr/include/endian.h /usr/include/bits/endian.h \
  /usr/include/bits/byteswap.h /usr/include/bits/types.h \
@@ -806,19 +815,19 @@ post.o: ../network/post.cc ../threads/copyright.h ../network/post.h \
  /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
  /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
  /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stdarg.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stdarg.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
  /usr/include/string.h ../threads/synchlist.h ../threads/list.h \
  ../threads/utility.h ../threads/synch.h ../threads/thread.h \
  ../machine/machine.h ../machine/translate.h ../machine/disk.h \
  ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h
-network.o: ../machine/network.cc ../threads/copyright.h \
- ../threads/system.h ../threads/copyright.h ../threads/utility.h \
- ../machine/sysdep.h /usr/include/stdlib.h /usr/include/features.h \
- /usr/include/stdc-predef.h /usr/include/sys/cdefs.h \
+network.o: ../machine/network.cc /usr/include/stdc-predef.h \
+ ../threads/copyright.h ../threads/system.h ../threads/copyright.h \
+ ../threads/utility.h ../machine/sysdep.h /usr/include/stdlib.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
  /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
  /usr/include/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stddef.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stddef.h \
  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
  /usr/include/endian.h /usr/include/bits/endian.h \
  /usr/include/bits/byteswap.h /usr/include/bits/types.h \
@@ -830,16 +839,16 @@ network.o: ../machine/network.cc ../threads/copyright.h \
  /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
  /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
  /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/include/stdarg.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.0/include/stdarg.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
- /usr/include/string.h ../threads/thread.h ../machine/machine.h \
- ../threads/utility.h ../machine/translate.h ../machine/disk.h \
- ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
- ../threads/scheduler.h ../threads/list.h ../machine/interrupt.h \
- ../threads/list.h ../machine/stats.h ../machine/timer.h \
- ../filesys/synchdisk.h ../machine/disk.h ../threads/synch.h \
- ../network/post.h ../machine/network.h ../threads/synchlist.h \
- ../threads/synch.h
+ /usr/include/string.h ../threads/thread.h ../threads/synch.h \
+ ../threads/list.h ../machine/machine.h ../threads/utility.h \
+ ../machine/translate.h ../machine/disk.h ../userprog/addrspace.h \
+ ../filesys/filesys.h ../filesys/openfile.h ../threads/scheduler.h \
+ ../machine/interrupt.h ../threads/list.h ../machine/stats.h \
+ ../machine/timer.h ../filesys/synchdisk.h ../machine/disk.h \
+ ../threads/synch.h ../network/post.h ../machine/network.h \
+ ../threads/synchlist.h ../threads/thread.h
 # DEPENDENCIES MUST END AT END OF FILE
 # IF YOU PUT STUFF HERE IT WILL GO AWAY
 # see make depend above

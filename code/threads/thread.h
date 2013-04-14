@@ -37,6 +37,8 @@
 #ifndef THREAD_H
 #define THREAD_H
 
+#include "synch.h"
+
 #include "copyright.h"
 #include "utility.h"
 
@@ -57,7 +59,7 @@ const int StackSize = 4 * 1024;	// in words
 
 
 // Thread state
-enum ThreadStatus { JUST_CREATED, RUNNING, READY, BLOCKED };
+enum ThreadStatus { JUST_CREATED, RUNNING, READY, BLOCKED, TERMINATED };
 
 // The following class defines a "thread control block" -- which
 // represents a single thread of execution.
@@ -78,7 +80,7 @@ class Thread {
     HostMemoryAddress machineState[MachineStateSize];	// all registers except for stackTop
 
   public:
-    Thread(const char* debugName);	// initialize a Thread 
+    Thread(const char* debugName, bool joinEnabled = false);	// initialize a Thread 
     ~Thread(); 				// deallocate a Thread
 					// NOTE -- thread being deleted
 					// must not be running when delete 
@@ -87,6 +89,9 @@ class Thread {
     // basic thread operations
 
     void Fork(VoidFunctionPtr func, void* arg);	// Make thread run (*func)(arg)
+
+    void Join();                                
+
     void Yield();  				// Relinquish the CPU if any 
 						// other thread is runnable
     void Sleep();  				// Put the thread to sleep and 
@@ -98,6 +103,10 @@ class Thread {
     void setStatus(ThreadStatus st) { status = st; }
     const char* getName() { return (name); }
     void Print() { printf("%s, ", name); }
+
+    void setPriority(int i) { priority = i; }
+    int getPriority() { return priority;  }
+
 
   private:
     // some of the private data for this class is listed above
@@ -112,6 +121,10 @@ class Thread {
     					// Allocate a stack for thread.
 					// Used internally by Fork()
 
+    bool join;
+    Puerto *joinPort;
+    
+    int priority; 
 #ifdef USER_PROGRAM
 // A thread running a user program actually has *two* sets of CPU registers -- 
 // one for its state while executing user code, one for its state 

@@ -31,7 +31,6 @@ Scheduler::Scheduler()
 { 
     readyList = new List<Thread*>; 
 } 
-
 //----------------------------------------------------------------------
 // Scheduler::~Scheduler
 // 	De-allocate the list of ready threads.
@@ -53,10 +52,10 @@ Scheduler::~Scheduler()
 void
 Scheduler::ReadyToRun (Thread *thread)
 {
-    DEBUG('t', "Putting thread %s on ready list.\n", thread->getName());
-
-    thread->setStatus(READY);
-    readyList->Append(thread);
+  DEBUG('t', "Putting thread %s on ready list.\n", thread->getName());
+  
+  thread->setStatus(READY);
+  readyList->SortedInsert(thread, thread->getPriority());
 }
 
 //----------------------------------------------------------------------
@@ -70,7 +69,7 @@ Scheduler::ReadyToRun (Thread *thread)
 Thread *
 Scheduler::FindNextToRun ()
 {
-    return readyList->Remove();
+  return readyList->Remove();
 }
 
 //----------------------------------------------------------------------

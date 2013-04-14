@@ -57,6 +57,7 @@
 // External functions used by this file
 
 void ThreadTest();
+
 void Copy(const char *unixFile, const char *nachosFile);
 void Print(const char *file);
 void PerformanceTest(void);

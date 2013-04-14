@@ -22,8 +22,10 @@
 #define SYNCH_H
 
 #include "copyright.h"
-#include "thread.h"
+//#include "thread.h"
 #include "list.h"
+
+class Thread;
 
 // La siguiente clase define un "sem�foro" cuyo valor es un entero positivo.
 // El sem�foro ofrece s�lo dos operaciones, P() y V():
@@ -87,6 +89,7 @@ class Lock {
 
   private:
     const char* name;				// para depuraci�n
+    int holderPriority;
     Semaphore* lock;
     Thread* holder;
 };
@@ -148,10 +151,8 @@ class Condition {
     int sleeping;
     Semaphore *innerLock;
     Semaphore *sleepers;
+    Semaphore *handshake;;
 
-
-
-  
 };
 
 /*
@@ -179,5 +180,27 @@ class Condition {
 };
 
 */
+
+class Puerto {
+ public:
+
+  Puerto(const char *debugName);
+  ~Puerto();
+  
+  void Send(int mensaje);
+  void Receive(int *mensaje);
+  
+
+ private:
+  int msg;
+  bool isFree;
+  Lock *portLock;
+  Condition *freeport;
+  Condition *msg_sent;
+  Condition *msg_recv;
+  const char *name;
+
+};
+
 
 #endif // SYNCH_H

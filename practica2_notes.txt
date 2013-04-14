@@ -1,0 +1,5 @@
+***Pr'actica 2
+
+Para los ejercicios 1, 2, 3 y 4 se modificaron los archivos "", ..., y ""
+
+En el caso de la pregunta del ejercicio 4, creemos que la soluci'on para evitar el problema de inversi'on de prioridades en el caso de los sem'aforos no es posible, ya que el sem'aforo carece del concepto de ser capturado, por lo tanto no habr'ia a qui'en modificar la prioridad. Ejemplo: Dado el sem'aforo sem inicializado en n, si el hilo T1 de m'axima prioridad intenta hacer sem->P() y se bloquea, no existe manera de determinar a cu'al hilo corresponder'ia modificar su prioridad para que se desbloquee el sem'aforo (ya que tampoco sabemos si esto ocurrir'a eventualmente). 
