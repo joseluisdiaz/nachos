@@ -14,6 +14,33 @@
 #include "addrspace.h"
 #include "synch.h"
 
+void readStrFromUsr(int usrAddr, char *outStr) {
+  int i = 0;
+  do {
+    machine->ReadMem(usrAddr + i,1,(int *)(outStr + i));
+  } while (outStr[i++] != '\0');
+}
+
+void readBuffFromUsr(int usrAddr, char *outBuff, int byteCount) {
+
+  for (int i = 0; i < byteCount; i++) 
+    machine->ReadMem(usrAddr + i,1,(int *)(outBuff + i));
+}
+
+void writeStrToUsr(char *str, int usrAddr) {
+  int i = 0;
+  do {
+    machine->WriteMem(usrAddr + i,1,str[i]);
+  } while (str[i++] != '\0');
+
+}
+
+void writeBuffToUsr(char *str, int usrAddr, int byteCount) {
+
+  for (int i = 0; i < byteCount; i++) 
+    machine->WriteMem(usrAddr + i,1,str[i]);
+}
+
 //----------------------------------------------------------------------
 // StartProcess
 // 	Run a user program.  Open the executable, load it into
@@ -37,6 +64,11 @@ StartProcess(const char *filename)
 
     space->InitRegisters();		// set the initial register values
     space->RestoreState();		// load page table register
+
+    // writeStrToUsr((char*)"o\0", 272);
+    // char biff[1024];
+    // readStrFromUsr(272, biff);
+    // printf("***%s****\n\n\n\n",biff);
 
     machine->Run();			// jump to the user progam
     ASSERT(false);			// machine->Run never returns;
@@ -82,3 +114,4 @@ ConsoleTest (const char *in, const char *out)
 	if (ch == 'q') return;  // if q, quit
     }
 }
+
