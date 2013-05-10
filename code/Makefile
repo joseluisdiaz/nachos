@@ -34,3 +34,6 @@ print:
 	$(SH) -c "$(LPR) machine/*.h machine/*.cc
 	$(SH) -c "$(LPR) bin/noff.h bin/coff.h bin/coff2noff.c"
 	$(SH) -c "$(LPR) test/*.h test/*.c test/*.s"
+
+tags:
+	find . -name "*.cc" -print -or -name "*.h" -print | xargs etags

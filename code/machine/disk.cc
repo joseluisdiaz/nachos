@@ -162,7 +162,7 @@ void
 Disk::HandleInterrupt ()
 { 
     active = false;
-    (*handler)(handlerArg);
+    (*handler)(handlerArg); // \o/
 }
 
 //----------------------------------------------------------------------

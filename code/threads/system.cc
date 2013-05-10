@@ -9,6 +9,7 @@
 #include "system.h"
 #include "preemptive.h"
 
+
 // This defines *all* of the global data structures used by Nachos.
 // These are all initialized and de-allocated by this file.
 
@@ -34,6 +35,9 @@ SynchDisk   *synchDisk;
 
 #ifdef USER_PROGRAM	// requires either FILESYS or FILESYS_STUB
 Machine *machine;	// user program memory and registers
+BitMap *memMap;
+SynchConsole *synchConsole;
+ProcessTable *processTable;
 #endif
 
 #ifdef NETWORK
@@ -43,9 +47,6 @@ PostOffice *postOffice;
 
 // External definition, to allow us to take a pointer to this function
 extern void Cleanup();
-
-
-
 
 //----------------------------------------------------------------------
 // TimerInterruptHandler
@@ -155,8 +156,13 @@ Initialize(int argc, char **argv)
     stats = new Statistics();			// collect statistics
     interrupt = new Interrupt;			// start up interrupt handling
     scheduler = new Scheduler();		// initialize the ready queue
+
     if (randomYield)				// start the timer (if needed)
-	timer = new Timer(TimerInterruptHandler, 0, randomYield);
+      timer = new Timer(TimerInterruptHandler, 0, randomYield);
+#ifdef USER_PROGRAM
+    else
+      timer = new Timer(TimerInterruptHandler, 0, false);
+#endif
 
     threadToBeDestroyed = NULL;
 
@@ -178,6 +184,9 @@ Initialize(int argc, char **argv)
     
 #ifdef USER_PROGRAM
     machine = new Machine(debugUserProg);	// this must come first
+    memMap = new BitMap(NumPhysPages);
+    synchConsole = new SynchConsole();
+    processTable = new ProcessTable();
 #endif
 
 #ifdef FILESYS

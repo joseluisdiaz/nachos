@@ -15,7 +15,7 @@
 int
 main()
 {
-    char *f = "hola";
-    Halt();
-    /* not reached */
+
+  Halt();
+  /* not reached */
 }

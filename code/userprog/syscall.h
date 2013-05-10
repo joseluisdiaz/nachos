@@ -30,6 +30,8 @@
 #define SC_Fork		9
 #define SC_Yield	10
 
+#define SC_Dump         11
+
 #ifndef IN_ASM
 
 /* The system call interface.  These are the operations the Nachos
@@ -57,13 +59,15 @@ typedef int SpaceId;
 /* Run the executable, stored in the Nachos file "name", and return the 
  * address space identifier
  */
-SpaceId Exec(char *name);
+SpaceId Exec(int argc, char **argv);
  
 /* Only return once the the user program "id" has finished.  
  * Return the exit status.
  */
 int Join(SpaceId id); 	
- 
+
+/* Dump current address space*/
+void Dump(); 
 
 /* File system operations: Create, Open, Read, Write, Close
  * These functions are patterned after UNIX -- files represent
@@ -107,9 +111,6 @@ int Read(char *buffer, int size, OpenFileId id);
 
 /* Close the file, we're done reading and writing to it. */
 void Close(OpenFileId id);
-
-
-
 /* User-level thread operations: Fork and Yield.  To allow multiple
  * threads to run within a user program. 
  */

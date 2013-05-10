@@ -45,6 +45,9 @@ typedef unsigned int HostMemoryAddress;
 inline int divRoundDown (int n, int s) { return n/s; }
 inline int divRoundUp   (int n, int s) { return (n/s) + ( n%s > 0 ? 1 : 0 ); }
 
+inline int alignTo   (int n, int s) { return divRoundUp(n,s)*s;  }
+
+
 // This declares the type "VoidFunctionPtr" to be a "pointer to a
 // function taking a pointer argument and returning nothing".  With
 // such a function pointer (say it is "func"), we can call it like this:

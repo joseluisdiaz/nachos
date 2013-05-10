@@ -24,6 +24,11 @@
 // for detecting stack overflows
 const unsigned STACK_FENCEPOST = 0xdeadbeef;	
 
+#ifdef USER_PROGRAM
+extern Machine *machine;
+#endif
+
+
 //----------------------------------------------------------------------
 // Thread::Thread
 // 	Initialize a thread control block, so that we can then call
@@ -40,6 +45,7 @@ Thread::Thread(const char* threadName, bool joinEnabled)
     status = JUST_CREATED;
 #ifdef USER_PROGRAM
     space = NULL;
+    table = new FdTable();
 #endif
     join = joinEnabled; 
     priority = 0;
@@ -70,6 +76,12 @@ Thread::~Thread()
   DEBUG('t', "Deleting thread \"%s\"\n", name);
 
   ASSERT(this != currentThread);
+
+#ifdef USER_PROGRAM
+    delete space;
+    delete table;
+#endif
+
   if (stack != NULL)
     DeallocBoundedArray((char *) stack, StackSize * sizeof(HostMemoryAddress));
 }
@@ -113,13 +125,16 @@ Thread::Fork(VoidFunctionPtr func, void* arg)
 					// are disabled!
     interrupt->SetLevel(oldLevel);
 }    
-void
+
+int
 Thread::Join() 
 {
   if (join) {
     int i;
     joinPort->Receive(&i);
+    return i;
   }
+  return -1;
 }
 
 //----------------------------------------------------------------------
@@ -168,9 +183,14 @@ Thread::Finish ()
     ASSERT(this == currentThread);
 
     setStatus(TERMINATED);
+    int st = 0;
+
+    #ifdef USER_PROGRAM
+    st = machine->ReadRegister(4);
+    #endif
    
     if (join) 
-       joinPort->Send(0);
+      joinPort->Send(st);
     
     DEBUG('t', "Finishing thread \"%s\"\n", getName());
     

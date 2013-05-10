@@ -16,6 +16,9 @@
 *~
 *#
 
+# cedet
+*.ede
+
 # nachos binaries
 nachos
 halt
@@ -24,3 +27,6 @@ matmult
 coff2noff
 TAGS
 sort
+test1
+test2
+*.coff

@@ -25,7 +25,8 @@
 	.ent	__start
 __start:
 	jal	main
-	move	$4,$0		
+	move	$4,$0
+	addiu   $4,$2,0
 	jal	Exit	 /* if we return from main, exit(0) */
 	.end __start
 
@@ -130,10 +131,19 @@ Yield:
 	j	$31
 	.end Yield
 
+	.globl Dump
+	.ent	Dump
+Dump:
+	addiu $2,$0,SC_Dump
+	syscall
+	j	$31
+	.end SC_Dump
+
+        
 /* dummy function to keep gcc happy */
         .globl  __main
         .ent    __main
 __main:
         j       $31
-        .end    __main
+       .end    __main
 

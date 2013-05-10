@@ -45,7 +45,10 @@
 #ifdef USER_PROGRAM
 #include "machine.h"
 #include "addrspace.h"
+#include "fdtable.h"
+#include "processtable.h"
 #endif
+
 
 // CPU register state to be saved on context switch.  
 // x86 processors needs 9 32-bit registers, whereas x64 has 8 extra registers
@@ -90,7 +93,7 @@ class Thread {
 
     void Fork(VoidFunctionPtr func, void* arg);	// Make thread run (*func)(arg)
 
-    void Join();                                
+    int Join();                                
 
     void Yield();  				// Relinquish the CPU if any 
 						// other thread is runnable
@@ -132,11 +135,13 @@ class Thread {
 
     int userRegisters[NumTotalRegs];	// user-level CPU register state
 
-  public:
+ public:
     void SaveUserState();		// save user-level register state
     void RestoreUserState();		// restore user-level register state
 
-    AddrSpace *space;			// User code this thread is running.
+    AddrSpace *space;			// User code this thread is running
+    FdTable *table;
+    
 #endif
 };
 

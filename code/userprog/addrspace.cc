@@ -80,37 +80,41 @@ AddrSpace::AddrSpace(OpenFile *executable)
 						// at least until we have
 						// virtual memory
 
-    DEBUG('a', "Initializing address space, num pages %d, size %d\n", 
-					numPages, size);
-// first, set up the translation 
+    DEBUG('a', "Initializing address space, num pages %d, size %d\n", numPages, size);
+
     pageTable = new TranslationEntry[numPages];
+    // first, set up the translation     
     for (i = 0; i < numPages; i++) {
 	pageTable[i].virtualPage = i;	// for now, virtual page # = phys page #
-	pageTable[i].physicalPage = i;
+	pageTable[i].physicalPage = memMap->Find();
 	pageTable[i].valid = true;
 	pageTable[i].use = false;
 	pageTable[i].dirty = false;
 	pageTable[i].readOnly = false;  // if the code segment was entirely on 
 					// a separate page, we could set its 
 					// pages to be read-only
+        DEBUG('a', "pagetable[%d].physicalPage = %d\n", i, pageTable[i].physicalPage); 
     }
+    int offset = pageTable[0].physicalPage * PageSize;
+ 
+    bzero(machine->mainMemory + offset, size);
     
-// zero out the entire address space, to zero the unitialized data segment 
-// and the stack segment
-    bzero(machine->mainMemory, size);
-
-// then, copy in the code and data segments into memory
+    // then, copy in the code and data segments into memory
     if (noffH.code.size > 0) {
         DEBUG('a', "Initializing code segment, at 0x%x, size %d\n", 
 			noffH.code.virtualAddr, noffH.code.size);
-        executable->ReadAt(&(machine->mainMemory[noffH.code.virtualAddr]),
-			noffH.code.size, noffH.code.inFileAddr);
+        executable->ReadAt(
+                           machine->mainMemory + (noffH.code.virtualAddr + offset),
+                           noffH.code.size, 
+                           noffH.code.inFileAddr);
     }
+
     if (noffH.initData.size > 0) {
         DEBUG('a', "Initializing data segment, at 0x%x, size %d\n", 
-			noffH.initData.virtualAddr, noffH.initData.size);
-        executable->ReadAt(&(machine->mainMemory[noffH.initData.virtualAddr]),
-			noffH.initData.size, noffH.initData.inFileAddr);
+			noffH.initData.virtualAddr, 
+              noffH.initData.size);
+        executable->ReadAt( machine->mainMemory + (noffH.initData.virtualAddr + offset),
+                            noffH.initData.size, noffH.initData.inFileAddr);
     }
 
 }
@@ -144,7 +148,7 @@ AddrSpace::InitRegisters()
 	machine->WriteRegister(i, 0);
 
     // Initial program counter -- must be location of "Start"
-    machine->WriteRegister(PCReg, 0);	
+    machine->WriteRegister(PCReg, 0);
 
     // Need to also tell MIPS where next instruction is, because
     // of branch delay possibility
@@ -155,6 +159,7 @@ AddrSpace::InitRegisters()
    // accidentally reference off the end!
     machine->WriteRegister(StackReg, numPages * PageSize - 16);
     DEBUG('a', "Initializing stack register to %d\n", numPages * PageSize - 16);
+    
 }
 
 //----------------------------------------------------------------------
@@ -167,6 +172,28 @@ AddrSpace::InitRegisters()
 
 void AddrSpace::SaveState() 
 {}
+
+
+void AddrSpace::Dump()
+{
+  int size = numPages * PageSize;
+  int ch;
+  for (int i=0; i <= size; i++) {
+
+    if (i % 4 == 0) {
+      machine->ReadMem(i, 4, &ch);
+
+      DEBUG('z', "\n%d (%14d):", i, ch);
+    }
+
+    machine->ReadMem(i, 1, &ch);
+
+    DEBUG('z'," %c ", (char)ch );
+
+
+  }
+
+}
 
 //----------------------------------------------------------------------
 // AddrSpace::RestoreState
