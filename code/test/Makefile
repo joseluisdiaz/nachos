@@ -34,7 +34,7 @@ CPP = $(GCCDIR)mips-cpp -B $(GCCDIR)
 INCDIR =-I../userprog -I../threads
 CFLAGS = -B $(GCCDIR) -G 0 -c $(INCDIR) -mips1
 
-all: test1 test2 halt shell matmult sort
+all: test1 test2 halt shell matmult sort cp cat
 
 start.o: start.s ../userprog/syscall.h
 	$(CPP) $(CPPFLAGS) start.s > strt.s
@@ -81,6 +81,13 @@ matmult.o: matmult.c
 matmult: matmult.o start.o
 	$(LD) $(LDFLAGS) start.o matmult.o -o matmult.coff
 	../bin/coff2noff matmult.coff matmult
+
+cp.o: cp.c
+	$(CC) $(CFLAGS) -c cp.c
+
+cp: cp.o start.o
+	$(LD) $(LDFLAGS) start.o cp.o -o cp.coff
+	../bin/coff2noff cp.coff cp
 
 # Estas reglas sirven para compilar programas simples,
 # que consistan en un único fuente.

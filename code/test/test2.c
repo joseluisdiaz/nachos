@@ -15,14 +15,12 @@ main(int argc, char **argv)
 
   Dump();
   int i = 0;
+
   for (; i <= argc; i++) {
+    cout("####");
     cout(argv[i]);
-    cout("\n");
+    cout("####\n");
   }
-  
-  
-  Write("Hola jose 1\n", 12, 1);
-  Write("Hola jose 2\n", 12, 1);
-  Write("Hola jose 3\n", 12, 1);
+
   return 1;
 }

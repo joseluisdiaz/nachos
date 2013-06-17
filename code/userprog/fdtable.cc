@@ -33,7 +33,12 @@ OpenFileId FdTable::Add(OpenFile *file) {
 
 
 OpenFileId FdTable::Open(char *name) {
-  return Add(fileSystem->Open(name));
+  OpenFile *file = fileSystem->Open(name);
+  
+  if (file == 0) 
+    return -1;
+  
+  return Add(file);
 }
 
 void FdTable::Create(char *name) {

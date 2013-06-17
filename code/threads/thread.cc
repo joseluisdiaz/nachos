@@ -44,7 +44,8 @@ Thread::Thread(const char* threadName, bool joinEnabled)
     stack = NULL;
     status = JUST_CREATED;
 #ifdef USER_PROGRAM
-    space = NULL;
+ 
+   space = NULL;
     table = new FdTable();
 #endif
     join = joinEnabled; 

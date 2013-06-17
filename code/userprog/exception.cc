@@ -41,6 +41,7 @@ using namespace std;
 // Leer y escribir
 //----------------------------------------------------------------------
 
+
 void readStrFromUsr(int usrAddr, char *outStr) {
   int i = 0;
   do {
@@ -71,12 +72,14 @@ int writeStrToUsr(char *str, int usrAddr) {
     machine->WriteMem(usrAddr + i,1,str[i]);
   } while (str[i++] != '\0');
 
+  DEBUG('z', "writeStrToUsr('%s', %d)\n", str, usrAddr);
+
   return i;
 
 }
 
 // TODO: Mejorar esto! :-)
-void  writeStrigToUsr(string *s, int usrAddr) {
+void  writeStringToUsr(string *s, int usrAddr) {
   DEBUG('z', "writeStringToUsr('%s', %d')\n", s->c_str(), usrAddr); 
   writeStrToUsr((char *)s->c_str(), usrAddr);
 }
@@ -88,9 +91,6 @@ void writeBuffToUsr(char *str, int usrAddr, int byteCount) {
     machine->WriteMem(usrAddr + i,1,str[i]);
 
 }
-
-
-
 
 //--------------------------------------------------------------------
 // Funciones para Syscalls
@@ -108,9 +108,9 @@ int ourRead(int addr, int size, OpenFileId id) {
   char buff[size];
   int ret = currentThread->table->Read(buff, size, id);
   writeBuffToUsr(buff, addr, size);
+
   return ret;
 }
-
 
 int ourJoin(SpaceId id) {
   Thread *thread = processTable->Get(id);
@@ -122,13 +122,11 @@ int ourJoin(SpaceId id) {
 // Funciones para el Exec
 // by Diaz-Racca, el batman y robin de Sistemas Operativos
 //--------------------------------------------------------------------
-
-
 int calcStackOffset(vector<string*> *p) {
   int offset = p->size() * 4;
   
   for (vector<string*>::iterator it = p->begin(); it != p->end(); ++it) 
-    offset += alignTo((*it)->size(), 4);
+    offset += alignTo((*it)->size() + 1, 4);
 
   DEBUG('z', "total offset: (%d)\n", offset);
   return offset;
@@ -139,20 +137,20 @@ void
 copyToStack(vector<string*> *p) {
 
   int sp = machine->ReadRegister(StackReg);
-  int start_arguments_p = sp - calcStackOffset(p);
+  int arguments_p = sp - calcStackOffset(p);
   int array_p =  sp;
 
-  DEBUG('z', "sp(%d) array_p(%d) start_arguments_p(%d)\n", sp, array_p, start_arguments_p);
+  DEBUG('z', "sp(%d) array_p(%d) start_arguments_p(%d)\n", sp, array_p, arguments_p);
 
-  machine->WriteRegister(StackReg, start_arguments_p - 16);
+  machine->WriteRegister(StackReg, arguments_p - 16);
 
   for (vector<string*>::reverse_iterator it = p->rbegin(); it != p->rend(); ++it) {
 
-    writeStrigToUsr(*it, start_arguments_p);
-    machine->WriteMem(array_p, 4, start_arguments_p);
+    writeStringToUsr(*it, arguments_p);
+    machine->WriteMem(array_p, 4, arguments_p);
 
     array_p -= 4;
-    start_arguments_p += alignTo((*it)->size(), 4);
+    arguments_p += alignTo((*it)->size() + 1, 4);
 
   }
 
@@ -177,6 +175,11 @@ execAid(void *arg) {
 
   OpenFile *exe = fileSystem->Open(params->at(0)->c_str());
 
+  if (exe == 0) {
+    deleteParams(params);
+    return;
+  }
+
   currentThread->space = new AddrSpace(exe);
 
   delete exe; 
@@ -185,6 +188,7 @@ execAid(void *arg) {
   currentThread->space->RestoreState();
 
   copyToStack(params);
+
   deleteParams(params);
 
   machine->Run();
@@ -262,11 +266,9 @@ bool HandleSyscall(int type) {
     currentThread->table->Create(name);
     break;
   case SC_Write:
-    DEBUG('z', "Escribiendo archivo.\n");
     ourWrite(args[0], args[1], args[2]);
     break;
   case SC_Read:
-    DEBUG('z', "Leyendo archivo.\n");
     ret = ourRead(args[0], args[1], args[2]);
     break;
   case SC_Open:

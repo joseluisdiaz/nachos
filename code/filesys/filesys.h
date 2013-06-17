@@ -46,7 +46,8 @@ class FileSystem {
     FileSystem(bool format) {}
 
     bool Create(const char *name, int initialSize) { 
-	int fileDescriptor = OpenForWrite(name);
+
+      int fileDescriptor = OpenForWrite(name);
 
 	if (fileDescriptor == -1) return false;
 	Close(fileDescriptor); 
