@@ -15,6 +15,8 @@
 
 #include "copyright.h"
 #include "filesys.h"
+#include "noff.h"
+#include "translate.h"
 
 #define UserStackSize		1024 	// increase this as necessary!
 
@@ -31,13 +33,26 @@ class AddrSpace {
     void SaveState();			// Save/restore address space-specific
     void RestoreState();		// info on a context switch 
 
+    TranslationEntry *GetEntry(int vpn);
+    ShadowEntry *GetShadowEntry(int vpn);
+
+    void LOD(int vpn, int physicalPage);
+
     void Dump();
+
 
   private:
     TranslationEntry *pageTable;	// Assume linear page table translation
+    ShadowEntry* shadowTable;
 					// for now!
     unsigned int numPages;		// Number of pages in the virtual 
 					// address space
+    OpenFile *executable;
+    NoffHeader noffH;
+
+    bool isInSegment(int a, Segment b);
+    int getInFileAddr(int a, Segment b);
 };
 
 #endif // ADDRSPACE_H
+

@@ -1,0 +1,8 @@
+
+TLB RND 4  - VirtualMemory: TLB hits: 22231151, TLB miss: 1003177
+TLB RND 32 - VirtualMemory: TLB hits: 21818068, TLB miss: 829
+TLB RND 64 - VirtualMemory: TLB hits: 21817401, TLB miss: 62
+
+TLB RR 4  - VirtualMemory: Used Pages: 46, TLB hits: 22350259, TLB miss: 1319672
+TLB RR 32 - VirtualMemory: Used Pages: 46, TLB hits: 21820047, TLB miss: 3061
+TLB RR 64 - VirtualMemory: Used Pages: 46, TLB hits: 21817382, TLB miss: 39

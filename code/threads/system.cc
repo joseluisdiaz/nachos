@@ -44,6 +44,9 @@ ProcessTable *processTable;
 PostOffice *postOffice;
 #endif
 
+#ifdef USE_TLB
+MemoryInterfaceUnit *miu;
+#endif
 
 // External definition, to allow us to take a pointer to this function
 extern void Cleanup();
@@ -184,13 +187,16 @@ Initialize(int argc, char **argv)
     
 #ifdef USER_PROGRAM
     machine = new Machine(debugUserProg);	// this must come first
-    memMap = new BitMap(NumPhysPages);
     synchConsole = new SynchConsole();
     processTable = new ProcessTable();
 #endif
 
 #ifdef FILESYS
     synchDisk = new SynchDisk("DISK");
+#endif
+
+#ifdef USE_TLB
+    miu = new MemoryInterfaceUnit();
 #endif
 
 #ifdef FILESYS_NEEDED
@@ -200,6 +206,8 @@ Initialize(int argc, char **argv)
 #ifdef NETWORK
     postOffice = new PostOffice(netname, rely, 10);
 #endif
+
+
 }
 
 //----------------------------------------------------------------------

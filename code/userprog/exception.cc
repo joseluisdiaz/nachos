@@ -120,7 +120,7 @@ int ourJoin(SpaceId id) {
 
 //--------------------------------------------------------------------
 // Funciones para el Exec
-// by Diaz-Racca, el batman y robin de Sistemas Operativos
+// by Diaz-Racca
 //--------------------------------------------------------------------
 int calcStackOffset(vector<string*> *p) {
   int offset = p->size() * 4;
@@ -170,7 +170,6 @@ void deleteParams(vector<string*> *p) {
 
 void
 execAid(void *arg) {
-
   vector<string*> *params  = (vector<string*> *) arg;
 
   OpenFile *exe = fileSystem->Open(params->at(0)->c_str());
@@ -182,7 +181,7 @@ execAid(void *arg) {
 
   currentThread->space = new AddrSpace(exe);
 
-  delete exe; 
+  //delete exe;
 
   currentThread->space->InitRegisters();
   currentThread->space->RestoreState();
@@ -323,8 +322,22 @@ ExceptionHandler(ExceptionType which)
     int type = machine->ReadRegister(2);
 
     if ((which == SyscallException) && !HandleSyscall(type)) {
-	printf("Unexpected user mode exception %d %d\n", which, type);
+      printf("Unexpected syscall %d\n", type);
 	ASSERT(false);
     }
+#ifdef USE_TLB
+    else if (which == PageFaultException) {
+      int virtAddr = machine->ReadRegister(BadVAddrReg);
+      miu->HandlePageFault(virtAddr);
+    }
+    else if (which == ReadOnlyException) {
+      DEBUG('a', "ReadOnly! \n");
+    }
+#endif
+    else {
+       	printf("Unexpected user mode exception %d %d\n", which, type);
+	ASSERT(false);
+    }
+
 }
 

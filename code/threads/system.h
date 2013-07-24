@@ -35,24 +35,28 @@ extern Timer *timer;				// the hardware alarm clock
 #include "synchconsole.h"
 #include "processtable.h"
 extern Machine* machine;	// user program memory and registers
-extern BitMap* memMap;
 extern SynchConsole* synchConsole;
 extern ProcessTable *processTable;
 #endif
 
 #ifdef FILESYS_NEEDED 		// FILESYS or FILESYS_STUB 
 #include "filesys.h"
-extern FileSystem  *fileSystem;
+extern FileSystem *fileSystem;
 #endif
 
 #ifdef FILESYS
 #include "synchdisk.h"
-extern SynchDisk   *synchDisk;
+extern SynchDisk *synchDisk;
 #endif
 
 #ifdef NETWORK
 #include "post.h"
 extern PostOffice* postOffice;
+#endif
+
+#ifdef USE_TLB
+#include "miu.h"
+extern MemoryInterfaceUnit* miu;
 #endif
 
 #endif // SYSTEM_H

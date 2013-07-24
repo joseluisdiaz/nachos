@@ -50,9 +50,10 @@ main.o: ../threads/main.cc /usr/include/stdc-predef.h \
  ../threads/synch.h ../threads/list.h ../machine/machine.h \
  ../threads/utility.h ../machine/translate.h ../machine/disk.h \
  ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
- ../userprog/fdtable.h ../filesys/openfile.h ../userprog/syscall.h \
- ../userprog/synchconsole.h ../threads/synch.h ../machine/console.h \
- /usr/include/c++/4.8.1/map /usr/include/c++/4.8.1/bits/stl_tree.h \
+ ../bin/noff.h ../machine/translate.h ../userprog/fdtable.h \
+ ../filesys/openfile.h ../userprog/syscall.h ../userprog/synchconsole.h \
+ ../threads/synch.h ../machine/console.h /usr/include/c++/4.8.1/map \
+ /usr/include/c++/4.8.1/bits/stl_tree.h \
  /usr/include/c++/4.8.1/bits/stl_algobase.h \
  /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++config.h \
  /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/os_defines.h \
@@ -106,10 +107,10 @@ scheduler.o: ../threads/scheduler.cc /usr/include/stdc-predef.h \
  /usr/include/string.h ../threads/thread.h ../threads/synch.h \
  ../machine/machine.h ../threads/utility.h ../machine/translate.h \
  ../machine/disk.h ../userprog/addrspace.h ../filesys/filesys.h \
- ../filesys/openfile.h ../userprog/fdtable.h ../filesys/openfile.h \
- ../userprog/syscall.h ../userprog/synchconsole.h ../threads/synch.h \
- ../machine/console.h /usr/include/c++/4.8.1/map \
- /usr/include/c++/4.8.1/bits/stl_tree.h \
+ ../filesys/openfile.h ../bin/noff.h ../machine/translate.h \
+ ../userprog/fdtable.h ../filesys/openfile.h ../userprog/syscall.h \
+ ../userprog/synchconsole.h ../threads/synch.h ../machine/console.h \
+ /usr/include/c++/4.8.1/map /usr/include/c++/4.8.1/bits/stl_tree.h \
  /usr/include/c++/4.8.1/bits/stl_algobase.h \
  /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++config.h \
  /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/os_defines.h \
@@ -163,10 +164,10 @@ synch.o: ../threads/synch.cc /usr/include/stdc-predef.h \
  /usr/include/string.h ../threads/system.h ../threads/thread.h \
  ../machine/machine.h ../threads/utility.h ../machine/translate.h \
  ../machine/disk.h ../userprog/addrspace.h ../filesys/filesys.h \
- ../filesys/openfile.h ../userprog/fdtable.h ../filesys/openfile.h \
- ../userprog/syscall.h ../userprog/synchconsole.h ../threads/synch.h \
- ../machine/console.h /usr/include/c++/4.8.1/map \
- /usr/include/c++/4.8.1/bits/stl_tree.h \
+ ../filesys/openfile.h ../bin/noff.h ../machine/translate.h \
+ ../userprog/fdtable.h ../filesys/openfile.h ../userprog/syscall.h \
+ ../userprog/synchconsole.h ../threads/synch.h ../machine/console.h \
+ /usr/include/c++/4.8.1/map /usr/include/c++/4.8.1/bits/stl_tree.h \
  /usr/include/c++/4.8.1/bits/stl_algobase.h \
  /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++config.h \
  /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/os_defines.h \
@@ -220,9 +221,10 @@ system.o: ../threads/system.cc /usr/include/stdc-predef.h \
  /usr/include/string.h ../threads/thread.h ../threads/synch.h \
  ../threads/list.h ../machine/machine.h ../threads/utility.h \
  ../machine/translate.h ../machine/disk.h ../userprog/addrspace.h \
- ../filesys/filesys.h ../filesys/openfile.h ../userprog/fdtable.h \
- ../filesys/openfile.h ../userprog/syscall.h ../userprog/synchconsole.h \
- ../threads/synch.h ../machine/console.h /usr/include/c++/4.8.1/map \
+ ../filesys/filesys.h ../filesys/openfile.h ../bin/noff.h \
+ ../machine/translate.h ../userprog/fdtable.h ../filesys/openfile.h \
+ ../userprog/syscall.h ../userprog/synchconsole.h ../threads/synch.h \
+ ../machine/console.h /usr/include/c++/4.8.1/map \
  /usr/include/c++/4.8.1/bits/stl_tree.h \
  /usr/include/c++/4.8.1/bits/stl_algobase.h \
  /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++config.h \
@@ -276,9 +278,10 @@ thread.o: ../threads/thread.cc /usr/include/stdc-predef.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
  /usr/include/string.h ../machine/machine.h ../threads/utility.h \
  ../machine/translate.h ../machine/disk.h ../userprog/addrspace.h \
- ../filesys/filesys.h ../filesys/openfile.h ../userprog/fdtable.h \
- ../filesys/openfile.h ../userprog/syscall.h ../userprog/synchconsole.h \
- ../threads/synch.h ../machine/console.h /usr/include/c++/4.8.1/map \
+ ../filesys/filesys.h ../filesys/openfile.h ../bin/noff.h \
+ ../machine/translate.h ../userprog/fdtable.h ../filesys/openfile.h \
+ ../userprog/syscall.h ../userprog/synchconsole.h ../threads/synch.h \
+ ../machine/console.h /usr/include/c++/4.8.1/map \
  /usr/include/c++/4.8.1/bits/stl_tree.h \
  /usr/include/c++/4.8.1/bits/stl_algobase.h \
  /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++config.h \
@@ -353,9 +356,10 @@ threadtest.o: ../threads/threadtest.cc /usr/include/stdc-predef.h \
  /usr/include/string.h ../threads/thread.h ../threads/synch.h \
  ../threads/list.h ../machine/machine.h ../threads/utility.h \
  ../machine/translate.h ../machine/disk.h ../userprog/addrspace.h \
- ../filesys/filesys.h ../filesys/openfile.h ../userprog/fdtable.h \
- ../filesys/openfile.h ../userprog/syscall.h ../userprog/synchconsole.h \
- ../threads/synch.h ../machine/console.h /usr/include/c++/4.8.1/map \
+ ../filesys/filesys.h ../filesys/openfile.h ../bin/noff.h \
+ ../machine/translate.h ../userprog/fdtable.h ../filesys/openfile.h \
+ ../userprog/syscall.h ../userprog/synchconsole.h ../threads/synch.h \
+ ../machine/console.h /usr/include/c++/4.8.1/map \
  /usr/include/c++/4.8.1/bits/stl_tree.h \
  /usr/include/c++/4.8.1/bits/stl_algobase.h \
  /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++config.h \
@@ -411,9 +415,10 @@ interrupt.o: ../machine/interrupt.cc /usr/include/stdc-predef.h \
  ../threads/synch.h ../threads/list.h ../machine/machine.h \
  ../threads/utility.h ../machine/translate.h ../machine/disk.h \
  ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
- ../userprog/fdtable.h ../filesys/openfile.h ../userprog/syscall.h \
- ../userprog/synchconsole.h ../threads/synch.h ../machine/console.h \
- /usr/include/c++/4.8.1/map /usr/include/c++/4.8.1/bits/stl_tree.h \
+ ../bin/noff.h ../machine/translate.h ../userprog/fdtable.h \
+ ../filesys/openfile.h ../userprog/syscall.h ../userprog/synchconsole.h \
+ ../threads/synch.h ../machine/console.h /usr/include/c++/4.8.1/map \
+ /usr/include/c++/4.8.1/bits/stl_tree.h \
  /usr/include/c++/4.8.1/bits/stl_algobase.h \
  /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++config.h \
  /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/os_defines.h \
@@ -483,10 +488,10 @@ sysdep.o: ../machine/sysdep.cc /usr/include/stdc-predef.h \
  ../threads/thread.h ../threads/synch.h ../threads/list.h \
  ../machine/machine.h ../threads/utility.h ../machine/translate.h \
  ../machine/disk.h ../userprog/addrspace.h ../filesys/filesys.h \
- ../filesys/openfile.h ../userprog/fdtable.h ../filesys/openfile.h \
- ../userprog/syscall.h ../userprog/synchconsole.h ../threads/synch.h \
- ../machine/console.h /usr/include/c++/4.8.1/map \
- /usr/include/c++/4.8.1/bits/stl_tree.h \
+ ../filesys/openfile.h ../bin/noff.h ../machine/translate.h \
+ ../userprog/fdtable.h ../filesys/openfile.h ../userprog/syscall.h \
+ ../userprog/synchconsole.h ../threads/synch.h ../machine/console.h \
+ /usr/include/c++/4.8.1/map /usr/include/c++/4.8.1/bits/stl_tree.h \
  /usr/include/c++/4.8.1/bits/stl_algobase.h \
  /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++config.h \
  /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/os_defines.h \
@@ -560,9 +565,10 @@ timer.o: ../machine/timer.cc /usr/include/stdc-predef.h \
  ../threads/thread.h ../threads/synch.h ../threads/list.h \
  ../machine/machine.h ../machine/translate.h ../machine/disk.h \
  ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
- ../userprog/fdtable.h ../filesys/openfile.h ../userprog/syscall.h \
- ../userprog/synchconsole.h ../threads/synch.h ../machine/console.h \
- /usr/include/c++/4.8.1/map /usr/include/c++/4.8.1/bits/stl_tree.h \
+ ../bin/noff.h ../machine/translate.h ../userprog/fdtable.h \
+ ../filesys/openfile.h ../userprog/syscall.h ../userprog/synchconsole.h \
+ ../threads/synch.h ../machine/console.h /usr/include/c++/4.8.1/map \
+ /usr/include/c++/4.8.1/bits/stl_tree.h \
  /usr/include/c++/4.8.1/bits/stl_algobase.h \
  /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++config.h \
  /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/os_defines.h \
@@ -616,9 +622,10 @@ preemptive.o: ../threads/preemptive.cc /usr/include/stdc-predef.h \
  /usr/include/string.h ../threads/thread.h ../threads/synch.h \
  ../threads/list.h ../machine/machine.h ../threads/utility.h \
  ../machine/translate.h ../machine/disk.h ../userprog/addrspace.h \
- ../filesys/filesys.h ../filesys/openfile.h ../userprog/fdtable.h \
- ../filesys/openfile.h ../userprog/syscall.h ../userprog/synchconsole.h \
- ../threads/synch.h ../machine/console.h /usr/include/c++/4.8.1/map \
+ ../filesys/filesys.h ../filesys/openfile.h ../bin/noff.h \
+ ../machine/translate.h ../userprog/fdtable.h ../filesys/openfile.h \
+ ../userprog/syscall.h ../userprog/synchconsole.h ../threads/synch.h \
+ ../machine/console.h /usr/include/c++/4.8.1/map \
  /usr/include/c++/4.8.1/bits/stl_tree.h \
  /usr/include/c++/4.8.1/bits/stl_algobase.h \
  /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++config.h \
@@ -680,9 +687,10 @@ addrspace.o: ../userprog/addrspace.cc /usr/include/stdc-predef.h \
  /usr/include/string.h ../threads/thread.h ../threads/synch.h \
  ../threads/list.h ../machine/machine.h ../threads/utility.h \
  ../machine/translate.h ../machine/disk.h ../userprog/addrspace.h \
- ../filesys/filesys.h ../filesys/openfile.h ../userprog/fdtable.h \
- ../filesys/openfile.h ../userprog/syscall.h ../userprog/synchconsole.h \
- ../threads/synch.h ../machine/console.h /usr/include/c++/4.8.1/map \
+ ../filesys/filesys.h ../filesys/openfile.h ../bin/noff.h \
+ ../machine/translate.h ../userprog/fdtable.h ../filesys/openfile.h \
+ ../userprog/syscall.h ../userprog/synchconsole.h ../threads/synch.h \
+ ../machine/console.h /usr/include/c++/4.8.1/map \
  /usr/include/c++/4.8.1/bits/stl_tree.h \
  /usr/include/c++/4.8.1/bits/stl_algobase.h \
  /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++config.h \
@@ -713,7 +721,7 @@ addrspace.o: ../userprog/addrspace.cc /usr/include/stdc-predef.h \
  /usr/include/c++/4.8.1/bits/range_access.h ../userprog/processtable.h \
  ../threads/scheduler.h ../machine/interrupt.h ../threads/list.h \
  ../machine/stats.h ../machine/timer.h ../userprog/bitmap.h \
- ../userprog/synchconsole.h ../userprog/addrspace.h ../bin/noff.h
+ ../userprog/synchconsole.h ../userprog/addrspace.h
 bitmap.o: ../userprog/bitmap.cc /usr/include/stdc-predef.h \
  ../threads/copyright.h ../userprog/bitmap.h ../threads/utility.h \
  ../threads/copyright.h ../machine/sysdep.h /usr/include/stdlib.h \
@@ -758,9 +766,10 @@ exception.o: ../userprog/exception.cc /usr/include/stdc-predef.h \
  /usr/include/string.h ../threads/thread.h ../threads/synch.h \
  ../threads/list.h ../machine/machine.h ../threads/utility.h \
  ../machine/translate.h ../machine/disk.h ../userprog/addrspace.h \
- ../filesys/filesys.h ../filesys/openfile.h ../userprog/fdtable.h \
- ../filesys/openfile.h ../userprog/syscall.h ../userprog/synchconsole.h \
- ../threads/synch.h ../machine/console.h /usr/include/c++/4.8.1/map \
+ ../filesys/filesys.h ../filesys/openfile.h ../bin/noff.h \
+ ../machine/translate.h ../userprog/fdtable.h ../filesys/openfile.h \
+ ../userprog/syscall.h ../userprog/synchconsole.h ../threads/synch.h \
+ ../machine/console.h /usr/include/c++/4.8.1/map \
  /usr/include/c++/4.8.1/bits/stl_tree.h \
  /usr/include/c++/4.8.1/bits/stl_algobase.h \
  /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++config.h \
@@ -857,9 +866,10 @@ progtest.o: ../userprog/progtest.cc /usr/include/stdc-predef.h \
  /usr/include/string.h ../threads/thread.h ../threads/synch.h \
  ../threads/list.h ../machine/machine.h ../threads/utility.h \
  ../machine/translate.h ../machine/disk.h ../userprog/addrspace.h \
- ../filesys/filesys.h ../filesys/openfile.h ../userprog/fdtable.h \
- ../filesys/openfile.h ../userprog/syscall.h ../userprog/synchconsole.h \
- ../threads/synch.h ../machine/console.h /usr/include/c++/4.8.1/map \
+ ../filesys/filesys.h ../filesys/openfile.h ../bin/noff.h \
+ ../machine/translate.h ../userprog/fdtable.h ../filesys/openfile.h \
+ ../userprog/syscall.h ../userprog/synchconsole.h ../threads/synch.h \
+ ../machine/console.h /usr/include/c++/4.8.1/map \
  /usr/include/c++/4.8.1/bits/stl_tree.h \
  /usr/include/c++/4.8.1/bits/stl_algobase.h \
  /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++config.h \
@@ -915,9 +925,10 @@ console.o: ../machine/console.cc /usr/include/stdc-predef.h \
  ../threads/thread.h ../threads/synch.h ../threads/list.h \
  ../machine/machine.h ../machine/translate.h ../machine/disk.h \
  ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
- ../userprog/fdtable.h ../filesys/openfile.h ../userprog/syscall.h \
- ../userprog/synchconsole.h ../threads/synch.h ../machine/console.h \
- /usr/include/c++/4.8.1/map /usr/include/c++/4.8.1/bits/stl_tree.h \
+ ../bin/noff.h ../machine/translate.h ../userprog/fdtable.h \
+ ../filesys/openfile.h ../userprog/syscall.h ../userprog/synchconsole.h \
+ ../threads/synch.h ../machine/console.h /usr/include/c++/4.8.1/map \
+ /usr/include/c++/4.8.1/bits/stl_tree.h \
  /usr/include/c++/4.8.1/bits/stl_algobase.h \
  /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++config.h \
  /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/os_defines.h \
@@ -972,9 +983,10 @@ machine.o: ../machine/machine.cc /usr/include/stdc-predef.h \
  ../threads/system.h ../threads/utility.h ../threads/thread.h \
  ../threads/synch.h ../threads/list.h ../machine/machine.h \
  ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
- ../userprog/fdtable.h ../filesys/openfile.h ../userprog/syscall.h \
- ../userprog/synchconsole.h ../threads/synch.h ../machine/console.h \
- /usr/include/c++/4.8.1/map /usr/include/c++/4.8.1/bits/stl_tree.h \
+ ../bin/noff.h ../machine/translate.h ../userprog/fdtable.h \
+ ../filesys/openfile.h ../userprog/syscall.h ../userprog/synchconsole.h \
+ ../threads/synch.h ../machine/console.h /usr/include/c++/4.8.1/map \
+ /usr/include/c++/4.8.1/bits/stl_tree.h \
  /usr/include/c++/4.8.1/bits/stl_algobase.h \
  /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++config.h \
  /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/os_defines.h \
@@ -1029,10 +1041,10 @@ mipssim.o: ../machine/mipssim.cc /usr/include/stdc-predef.h \
  ../machine/mipssim.h ../threads/system.h ../threads/utility.h \
  ../threads/thread.h ../threads/synch.h ../threads/list.h \
  ../machine/machine.h ../userprog/addrspace.h ../filesys/filesys.h \
- ../filesys/openfile.h ../userprog/fdtable.h ../filesys/openfile.h \
- ../userprog/syscall.h ../userprog/synchconsole.h ../threads/synch.h \
- ../machine/console.h /usr/include/c++/4.8.1/map \
- /usr/include/c++/4.8.1/bits/stl_tree.h \
+ ../filesys/openfile.h ../bin/noff.h ../machine/translate.h \
+ ../userprog/fdtable.h ../filesys/openfile.h ../userprog/syscall.h \
+ ../userprog/synchconsole.h ../threads/synch.h ../machine/console.h \
+ /usr/include/c++/4.8.1/map /usr/include/c++/4.8.1/bits/stl_tree.h \
  /usr/include/c++/4.8.1/bits/stl_algobase.h \
  /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++config.h \
  /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/os_defines.h \
@@ -1085,11 +1097,12 @@ translate.o: ../machine/translate.cc /usr/include/stdc-predef.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
  /usr/include/string.h ../machine/translate.h ../machine/disk.h \
  ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
- ../threads/system.h ../threads/utility.h ../threads/thread.h \
- ../threads/synch.h ../threads/list.h ../machine/machine.h \
- ../userprog/fdtable.h ../filesys/openfile.h ../userprog/syscall.h \
- ../userprog/synchconsole.h ../threads/synch.h ../machine/console.h \
- /usr/include/c++/4.8.1/map /usr/include/c++/4.8.1/bits/stl_tree.h \
+ ../bin/noff.h ../machine/translate.h ../threads/system.h \
+ ../threads/utility.h ../threads/thread.h ../threads/synch.h \
+ ../threads/list.h ../machine/machine.h ../userprog/fdtable.h \
+ ../filesys/openfile.h ../userprog/syscall.h ../userprog/synchconsole.h \
+ ../threads/synch.h ../machine/console.h /usr/include/c++/4.8.1/map \
+ /usr/include/c++/4.8.1/bits/stl_tree.h \
  /usr/include/c++/4.8.1/bits/stl_algobase.h \
  /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++config.h \
  /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/os_defines.h \

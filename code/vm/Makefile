@@ -53,6 +53,121 @@ main.o: ../threads/main.cc /usr/include/stdc-predef.h \
  ../threads/synch.h ../threads/list.h ../machine/machine.h \
  ../threads/utility.h ../machine/translate.h ../machine/disk.h \
  ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
+ ../bin/noff.h ../machine/translate.h ../userprog/fdtable.h \
+ ../filesys/openfile.h ../userprog/syscall.h ../userprog/synchconsole.h \
+ ../threads/synch.h ../machine/console.h /usr/include/c++/4.8.1/map \
+ /usr/include/c++/4.8.1/bits/stl_tree.h \
+ /usr/include/c++/4.8.1/bits/stl_algobase.h \
+ /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++config.h \
+ /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/os_defines.h \
+ /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/cpu_defines.h \
+ /usr/include/c++/4.8.1/bits/functexcept.h \
+ /usr/include/c++/4.8.1/bits/exception_defines.h \
+ /usr/include/c++/4.8.1/bits/cpp_type_traits.h \
+ /usr/include/c++/4.8.1/ext/type_traits.h \
+ /usr/include/c++/4.8.1/ext/numeric_traits.h \
+ /usr/include/c++/4.8.1/bits/stl_pair.h \
+ /usr/include/c++/4.8.1/bits/move.h \
+ /usr/include/c++/4.8.1/bits/concept_check.h \
+ /usr/include/c++/4.8.1/bits/stl_iterator_base_types.h \
+ /usr/include/c++/4.8.1/bits/stl_iterator_base_funcs.h \
+ /usr/include/c++/4.8.1/debug/debug.h \
+ /usr/include/c++/4.8.1/bits/stl_iterator.h \
+ /usr/include/c++/4.8.1/bits/allocator.h \
+ /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++allocator.h \
+ /usr/include/c++/4.8.1/ext/new_allocator.h /usr/include/c++/4.8.1/new \
+ /usr/include/c++/4.8.1/exception \
+ /usr/include/c++/4.8.1/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/4.8.1/bits/memoryfwd.h \
+ /usr/include/c++/4.8.1/bits/stl_function.h \
+ /usr/include/c++/4.8.1/backward/binders.h \
+ /usr/include/c++/4.8.1/bits/stl_map.h \
+ /usr/include/c++/4.8.1/bits/stl_multimap.h \
+ /usr/include/c++/4.8.1/bits/range_access.h ../userprog/processtable.h \
+ ../threads/scheduler.h ../machine/interrupt.h ../threads/list.h \
+ ../machine/stats.h ../machine/timer.h ../userprog/bitmap.h \
+ ../userprog/synchconsole.h ../vm/miu.h
+scheduler.o: ../threads/scheduler.cc /usr/include/stdc-predef.h \
+ ../threads/copyright.h ../threads/scheduler.h ../threads/list.h \
+ ../threads/utility.h ../machine/sysdep.h ../threads/copyright.h \
+ /usr/include/stdlib.h /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.1/include/stddef.h \
+ /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+ /usr/include/endian.h /usr/include/bits/endian.h \
+ /usr/include/bits/byteswap.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/bits/byteswap-16.h \
+ /usr/include/xlocale.h /usr/include/sys/types.h /usr/include/time.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
+ /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.1/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/string.h ../threads/thread.h ../threads/synch.h \
+ ../machine/machine.h ../threads/utility.h ../machine/translate.h \
+ ../machine/disk.h ../userprog/addrspace.h ../filesys/filesys.h \
+ ../filesys/openfile.h ../bin/noff.h ../machine/translate.h \
+ ../userprog/fdtable.h ../filesys/openfile.h ../userprog/syscall.h \
+ ../userprog/synchconsole.h ../threads/synch.h ../machine/console.h \
+ /usr/include/c++/4.8.1/map /usr/include/c++/4.8.1/bits/stl_tree.h \
+ /usr/include/c++/4.8.1/bits/stl_algobase.h \
+ /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++config.h \
+ /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/os_defines.h \
+ /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/cpu_defines.h \
+ /usr/include/c++/4.8.1/bits/functexcept.h \
+ /usr/include/c++/4.8.1/bits/exception_defines.h \
+ /usr/include/c++/4.8.1/bits/cpp_type_traits.h \
+ /usr/include/c++/4.8.1/ext/type_traits.h \
+ /usr/include/c++/4.8.1/ext/numeric_traits.h \
+ /usr/include/c++/4.8.1/bits/stl_pair.h \
+ /usr/include/c++/4.8.1/bits/move.h \
+ /usr/include/c++/4.8.1/bits/concept_check.h \
+ /usr/include/c++/4.8.1/bits/stl_iterator_base_types.h \
+ /usr/include/c++/4.8.1/bits/stl_iterator_base_funcs.h \
+ /usr/include/c++/4.8.1/debug/debug.h \
+ /usr/include/c++/4.8.1/bits/stl_iterator.h \
+ /usr/include/c++/4.8.1/bits/allocator.h \
+ /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++allocator.h \
+ /usr/include/c++/4.8.1/ext/new_allocator.h /usr/include/c++/4.8.1/new \
+ /usr/include/c++/4.8.1/exception \
+ /usr/include/c++/4.8.1/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/4.8.1/bits/memoryfwd.h \
+ /usr/include/c++/4.8.1/bits/stl_function.h \
+ /usr/include/c++/4.8.1/backward/binders.h \
+ /usr/include/c++/4.8.1/bits/stl_map.h \
+ /usr/include/c++/4.8.1/bits/stl_multimap.h \
+ /usr/include/c++/4.8.1/bits/range_access.h ../userprog/processtable.h \
+ ../threads/system.h ../machine/interrupt.h ../threads/list.h \
+ ../machine/stats.h ../machine/timer.h ../userprog/bitmap.h \
+ ../userprog/synchconsole.h ../vm/miu.h
+synch.o: ../threads/synch.cc /usr/include/stdc-predef.h \
+ ../threads/copyright.h ../threads/synch.h ../threads/list.h \
+ ../threads/utility.h ../machine/sysdep.h ../threads/copyright.h \
+ /usr/include/stdlib.h /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.1/include/stddef.h \
+ /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+ /usr/include/endian.h /usr/include/bits/endian.h \
+ /usr/include/bits/byteswap.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/bits/byteswap-16.h \
+ /usr/include/xlocale.h /usr/include/sys/types.h /usr/include/time.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
+ /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.1/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/string.h ../threads/system.h ../threads/thread.h \
+ ../machine/machine.h ../threads/utility.h ../machine/translate.h \
+ ../machine/disk.h ../userprog/addrspace.h ../filesys/filesys.h \
+ ../filesys/openfile.h ../bin/noff.h ../machine/translate.h \
  ../userprog/fdtable.h ../filesys/openfile.h ../userprog/syscall.h \
  ../userprog/synchconsole.h ../threads/synch.h ../machine/console.h \
  /usr/include/c++/4.8.1/map /usr/include/c++/4.8.1/bits/stl_tree.h \
@@ -85,121 +200,7 @@ main.o: ../threads/main.cc /usr/include/stdc-predef.h \
  /usr/include/c++/4.8.1/bits/range_access.h ../userprog/processtable.h \
  ../threads/scheduler.h ../machine/interrupt.h ../threads/list.h \
  ../machine/stats.h ../machine/timer.h ../userprog/bitmap.h \
- ../userprog/synchconsole.h
-scheduler.o: ../threads/scheduler.cc /usr/include/stdc-predef.h \
- ../threads/copyright.h ../threads/scheduler.h ../threads/list.h \
- ../threads/utility.h ../machine/sysdep.h ../threads/copyright.h \
- /usr/include/stdlib.h /usr/include/features.h /usr/include/sys/cdefs.h \
- /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
- /usr/include/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.1/include/stddef.h \
- /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
- /usr/include/endian.h /usr/include/bits/endian.h \
- /usr/include/bits/byteswap.h /usr/include/bits/types.h \
- /usr/include/bits/typesizes.h /usr/include/bits/byteswap-16.h \
- /usr/include/xlocale.h /usr/include/sys/types.h /usr/include/time.h \
- /usr/include/sys/select.h /usr/include/bits/select.h \
- /usr/include/bits/sigset.h /usr/include/bits/time.h \
- /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
- /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
- /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
- /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.1/include/stdarg.h \
- /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
- /usr/include/string.h ../threads/thread.h ../threads/synch.h \
- ../machine/machine.h ../threads/utility.h ../machine/translate.h \
- ../machine/disk.h ../userprog/addrspace.h ../filesys/filesys.h \
- ../filesys/openfile.h ../userprog/fdtable.h ../filesys/openfile.h \
- ../userprog/syscall.h ../userprog/synchconsole.h ../threads/synch.h \
- ../machine/console.h /usr/include/c++/4.8.1/map \
- /usr/include/c++/4.8.1/bits/stl_tree.h \
- /usr/include/c++/4.8.1/bits/stl_algobase.h \
- /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++config.h \
- /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/os_defines.h \
- /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/cpu_defines.h \
- /usr/include/c++/4.8.1/bits/functexcept.h \
- /usr/include/c++/4.8.1/bits/exception_defines.h \
- /usr/include/c++/4.8.1/bits/cpp_type_traits.h \
- /usr/include/c++/4.8.1/ext/type_traits.h \
- /usr/include/c++/4.8.1/ext/numeric_traits.h \
- /usr/include/c++/4.8.1/bits/stl_pair.h \
- /usr/include/c++/4.8.1/bits/move.h \
- /usr/include/c++/4.8.1/bits/concept_check.h \
- /usr/include/c++/4.8.1/bits/stl_iterator_base_types.h \
- /usr/include/c++/4.8.1/bits/stl_iterator_base_funcs.h \
- /usr/include/c++/4.8.1/debug/debug.h \
- /usr/include/c++/4.8.1/bits/stl_iterator.h \
- /usr/include/c++/4.8.1/bits/allocator.h \
- /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++allocator.h \
- /usr/include/c++/4.8.1/ext/new_allocator.h /usr/include/c++/4.8.1/new \
- /usr/include/c++/4.8.1/exception \
- /usr/include/c++/4.8.1/bits/atomic_lockfree_defines.h \
- /usr/include/c++/4.8.1/bits/memoryfwd.h \
- /usr/include/c++/4.8.1/bits/stl_function.h \
- /usr/include/c++/4.8.1/backward/binders.h \
- /usr/include/c++/4.8.1/bits/stl_map.h \
- /usr/include/c++/4.8.1/bits/stl_multimap.h \
- /usr/include/c++/4.8.1/bits/range_access.h ../userprog/processtable.h \
- ../threads/system.h ../machine/interrupt.h ../threads/list.h \
- ../machine/stats.h ../machine/timer.h ../userprog/bitmap.h \
- ../userprog/synchconsole.h
-synch.o: ../threads/synch.cc /usr/include/stdc-predef.h \
- ../threads/copyright.h ../threads/synch.h ../threads/list.h \
- ../threads/utility.h ../machine/sysdep.h ../threads/copyright.h \
- /usr/include/stdlib.h /usr/include/features.h /usr/include/sys/cdefs.h \
- /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
- /usr/include/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.1/include/stddef.h \
- /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
- /usr/include/endian.h /usr/include/bits/endian.h \
- /usr/include/bits/byteswap.h /usr/include/bits/types.h \
- /usr/include/bits/typesizes.h /usr/include/bits/byteswap-16.h \
- /usr/include/xlocale.h /usr/include/sys/types.h /usr/include/time.h \
- /usr/include/sys/select.h /usr/include/bits/select.h \
- /usr/include/bits/sigset.h /usr/include/bits/time.h \
- /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
- /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
- /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
- /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.1/include/stdarg.h \
- /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
- /usr/include/string.h ../threads/system.h ../threads/thread.h \
- ../machine/machine.h ../threads/utility.h ../machine/translate.h \
- ../machine/disk.h ../userprog/addrspace.h ../filesys/filesys.h \
- ../filesys/openfile.h ../userprog/fdtable.h ../filesys/openfile.h \
- ../userprog/syscall.h ../userprog/synchconsole.h ../threads/synch.h \
- ../machine/console.h /usr/include/c++/4.8.1/map \
- /usr/include/c++/4.8.1/bits/stl_tree.h \
- /usr/include/c++/4.8.1/bits/stl_algobase.h \
- /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++config.h \
- /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/os_defines.h \
- /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/cpu_defines.h \
- /usr/include/c++/4.8.1/bits/functexcept.h \
- /usr/include/c++/4.8.1/bits/exception_defines.h \
- /usr/include/c++/4.8.1/bits/cpp_type_traits.h \
- /usr/include/c++/4.8.1/ext/type_traits.h \
- /usr/include/c++/4.8.1/ext/numeric_traits.h \
- /usr/include/c++/4.8.1/bits/stl_pair.h \
- /usr/include/c++/4.8.1/bits/move.h \
- /usr/include/c++/4.8.1/bits/concept_check.h \
- /usr/include/c++/4.8.1/bits/stl_iterator_base_types.h \
- /usr/include/c++/4.8.1/bits/stl_iterator_base_funcs.h \
- /usr/include/c++/4.8.1/debug/debug.h \
- /usr/include/c++/4.8.1/bits/stl_iterator.h \
- /usr/include/c++/4.8.1/bits/allocator.h \
- /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++allocator.h \
- /usr/include/c++/4.8.1/ext/new_allocator.h /usr/include/c++/4.8.1/new \
- /usr/include/c++/4.8.1/exception \
- /usr/include/c++/4.8.1/bits/atomic_lockfree_defines.h \
- /usr/include/c++/4.8.1/bits/memoryfwd.h \
- /usr/include/c++/4.8.1/bits/stl_function.h \
- /usr/include/c++/4.8.1/backward/binders.h \
- /usr/include/c++/4.8.1/bits/stl_map.h \
- /usr/include/c++/4.8.1/bits/stl_multimap.h \
- /usr/include/c++/4.8.1/bits/range_access.h ../userprog/processtable.h \
- ../threads/scheduler.h ../machine/interrupt.h ../threads/list.h \
- ../machine/stats.h ../machine/timer.h ../userprog/bitmap.h \
- ../userprog/synchconsole.h
+ ../userprog/synchconsole.h ../vm/miu.h
 system.o: ../threads/system.cc /usr/include/stdc-predef.h \
  ../threads/copyright.h ../threads/system.h ../threads/utility.h \
  ../machine/sysdep.h ../threads/copyright.h /usr/include/stdlib.h \
@@ -223,9 +224,10 @@ system.o: ../threads/system.cc /usr/include/stdc-predef.h \
  /usr/include/string.h ../threads/thread.h ../threads/synch.h \
  ../threads/list.h ../machine/machine.h ../threads/utility.h \
  ../machine/translate.h ../machine/disk.h ../userprog/addrspace.h \
- ../filesys/filesys.h ../filesys/openfile.h ../userprog/fdtable.h \
- ../filesys/openfile.h ../userprog/syscall.h ../userprog/synchconsole.h \
- ../threads/synch.h ../machine/console.h /usr/include/c++/4.8.1/map \
+ ../filesys/filesys.h ../filesys/openfile.h ../bin/noff.h \
+ ../machine/translate.h ../userprog/fdtable.h ../filesys/openfile.h \
+ ../userprog/syscall.h ../userprog/synchconsole.h ../threads/synch.h \
+ ../machine/console.h /usr/include/c++/4.8.1/map \
  /usr/include/c++/4.8.1/bits/stl_tree.h \
  /usr/include/c++/4.8.1/bits/stl_algobase.h \
  /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++config.h \
@@ -256,7 +258,7 @@ system.o: ../threads/system.cc /usr/include/stdc-predef.h \
  /usr/include/c++/4.8.1/bits/range_access.h ../userprog/processtable.h \
  ../threads/scheduler.h ../machine/interrupt.h ../threads/list.h \
  ../machine/stats.h ../machine/timer.h ../userprog/bitmap.h \
- ../userprog/synchconsole.h ../threads/preemptive.h
+ ../userprog/synchconsole.h ../vm/miu.h ../threads/preemptive.h
 thread.o: ../threads/thread.cc /usr/include/stdc-predef.h \
  ../threads/copyright.h ../threads/thread.h ../threads/synch.h \
  ../threads/list.h ../threads/utility.h ../machine/sysdep.h \
@@ -279,9 +281,10 @@ thread.o: ../threads/thread.cc /usr/include/stdc-predef.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
  /usr/include/string.h ../machine/machine.h ../threads/utility.h \
  ../machine/translate.h ../machine/disk.h ../userprog/addrspace.h \
- ../filesys/filesys.h ../filesys/openfile.h ../userprog/fdtable.h \
- ../filesys/openfile.h ../userprog/syscall.h ../userprog/synchconsole.h \
- ../threads/synch.h ../machine/console.h /usr/include/c++/4.8.1/map \
+ ../filesys/filesys.h ../filesys/openfile.h ../bin/noff.h \
+ ../machine/translate.h ../userprog/fdtable.h ../filesys/openfile.h \
+ ../userprog/syscall.h ../userprog/synchconsole.h ../threads/synch.h \
+ ../machine/console.h /usr/include/c++/4.8.1/map \
  /usr/include/c++/4.8.1/bits/stl_tree.h \
  /usr/include/c++/4.8.1/bits/stl_algobase.h \
  /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++config.h \
@@ -312,7 +315,8 @@ thread.o: ../threads/thread.cc /usr/include/stdc-predef.h \
  /usr/include/c++/4.8.1/bits/range_access.h ../userprog/processtable.h \
  ../threads/switch.h ../threads/system.h ../threads/scheduler.h \
  ../machine/interrupt.h ../threads/list.h ../machine/stats.h \
- ../machine/timer.h ../userprog/bitmap.h ../userprog/synchconsole.h
+ ../machine/timer.h ../userprog/bitmap.h ../userprog/synchconsole.h \
+ ../vm/miu.h
 utility.o: ../threads/utility.cc /usr/include/stdc-predef.h \
  ../threads/copyright.h ../threads/utility.h ../machine/sysdep.h \
  ../threads/copyright.h /usr/include/stdlib.h /usr/include/features.h \
@@ -356,9 +360,10 @@ threadtest.o: ../threads/threadtest.cc /usr/include/stdc-predef.h \
  /usr/include/string.h ../threads/thread.h ../threads/synch.h \
  ../threads/list.h ../machine/machine.h ../threads/utility.h \
  ../machine/translate.h ../machine/disk.h ../userprog/addrspace.h \
- ../filesys/filesys.h ../filesys/openfile.h ../userprog/fdtable.h \
- ../filesys/openfile.h ../userprog/syscall.h ../userprog/synchconsole.h \
- ../threads/synch.h ../machine/console.h /usr/include/c++/4.8.1/map \
+ ../filesys/filesys.h ../filesys/openfile.h ../bin/noff.h \
+ ../machine/translate.h ../userprog/fdtable.h ../filesys/openfile.h \
+ ../userprog/syscall.h ../userprog/synchconsole.h ../threads/synch.h \
+ ../machine/console.h /usr/include/c++/4.8.1/map \
  /usr/include/c++/4.8.1/bits/stl_tree.h \
  /usr/include/c++/4.8.1/bits/stl_algobase.h \
  /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++config.h \
@@ -389,7 +394,7 @@ threadtest.o: ../threads/threadtest.cc /usr/include/stdc-predef.h \
  /usr/include/c++/4.8.1/bits/range_access.h ../userprog/processtable.h \
  ../threads/scheduler.h ../machine/interrupt.h ../threads/list.h \
  ../machine/stats.h ../machine/timer.h ../userprog/bitmap.h \
- ../userprog/synchconsole.h
+ ../userprog/synchconsole.h ../vm/miu.h
 interrupt.o: ../machine/interrupt.cc /usr/include/stdc-predef.h \
  ../threads/copyright.h ../machine/interrupt.h ../threads/list.h \
  ../threads/copyright.h ../threads/utility.h ../machine/sysdep.h \
@@ -414,9 +419,10 @@ interrupt.o: ../machine/interrupt.cc /usr/include/stdc-predef.h \
  ../threads/synch.h ../threads/list.h ../machine/machine.h \
  ../threads/utility.h ../machine/translate.h ../machine/disk.h \
  ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
- ../userprog/fdtable.h ../filesys/openfile.h ../userprog/syscall.h \
- ../userprog/synchconsole.h ../threads/synch.h ../machine/console.h \
- /usr/include/c++/4.8.1/map /usr/include/c++/4.8.1/bits/stl_tree.h \
+ ../bin/noff.h ../machine/translate.h ../userprog/fdtable.h \
+ ../filesys/openfile.h ../userprog/syscall.h ../userprog/synchconsole.h \
+ ../threads/synch.h ../machine/console.h /usr/include/c++/4.8.1/map \
+ /usr/include/c++/4.8.1/bits/stl_tree.h \
  /usr/include/c++/4.8.1/bits/stl_algobase.h \
  /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++config.h \
  /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/os_defines.h \
@@ -445,7 +451,8 @@ interrupt.o: ../machine/interrupt.cc /usr/include/stdc-predef.h \
  /usr/include/c++/4.8.1/bits/stl_multimap.h \
  /usr/include/c++/4.8.1/bits/range_access.h ../userprog/processtable.h \
  ../threads/scheduler.h ../machine/interrupt.h ../machine/stats.h \
- ../machine/timer.h ../userprog/bitmap.h ../userprog/synchconsole.h
+ ../machine/timer.h ../userprog/bitmap.h ../userprog/synchconsole.h \
+ ../vm/miu.h
 sysdep.o: ../machine/sysdep.cc /usr/include/stdc-predef.h \
  ../threads/copyright.h /usr/include/stdio.h /usr/include/features.h \
  /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
@@ -486,10 +493,10 @@ sysdep.o: ../machine/sysdep.cc /usr/include/stdc-predef.h \
  ../threads/thread.h ../threads/synch.h ../threads/list.h \
  ../machine/machine.h ../threads/utility.h ../machine/translate.h \
  ../machine/disk.h ../userprog/addrspace.h ../filesys/filesys.h \
- ../filesys/openfile.h ../userprog/fdtable.h ../filesys/openfile.h \
- ../userprog/syscall.h ../userprog/synchconsole.h ../threads/synch.h \
- ../machine/console.h /usr/include/c++/4.8.1/map \
- /usr/include/c++/4.8.1/bits/stl_tree.h \
+ ../filesys/openfile.h ../bin/noff.h ../machine/translate.h \
+ ../userprog/fdtable.h ../filesys/openfile.h ../userprog/syscall.h \
+ ../userprog/synchconsole.h ../threads/synch.h ../machine/console.h \
+ /usr/include/c++/4.8.1/map /usr/include/c++/4.8.1/bits/stl_tree.h \
  /usr/include/c++/4.8.1/bits/stl_algobase.h \
  /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++config.h \
  /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/os_defines.h \
@@ -518,7 +525,8 @@ sysdep.o: ../machine/sysdep.cc /usr/include/stdc-predef.h \
  /usr/include/c++/4.8.1/bits/stl_multimap.h \
  /usr/include/c++/4.8.1/bits/range_access.h ../userprog/processtable.h \
  ../threads/scheduler.h ../machine/interrupt.h ../machine/stats.h \
- ../machine/timer.h ../userprog/bitmap.h ../userprog/synchconsole.h
+ ../machine/timer.h ../userprog/bitmap.h ../userprog/synchconsole.h \
+ ../vm/miu.h
 stats.o: ../machine/stats.cc /usr/include/stdc-predef.h \
  ../threads/copyright.h ../threads/utility.h ../threads/copyright.h \
  ../machine/sysdep.h /usr/include/stdlib.h /usr/include/features.h \
@@ -563,63 +571,7 @@ timer.o: ../machine/timer.cc /usr/include/stdc-predef.h \
  ../threads/thread.h ../threads/synch.h ../threads/list.h \
  ../machine/machine.h ../machine/translate.h ../machine/disk.h \
  ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
- ../userprog/fdtable.h ../filesys/openfile.h ../userprog/syscall.h \
- ../userprog/synchconsole.h ../threads/synch.h ../machine/console.h \
- /usr/include/c++/4.8.1/map /usr/include/c++/4.8.1/bits/stl_tree.h \
- /usr/include/c++/4.8.1/bits/stl_algobase.h \
- /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++config.h \
- /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/os_defines.h \
- /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/cpu_defines.h \
- /usr/include/c++/4.8.1/bits/functexcept.h \
- /usr/include/c++/4.8.1/bits/exception_defines.h \
- /usr/include/c++/4.8.1/bits/cpp_type_traits.h \
- /usr/include/c++/4.8.1/ext/type_traits.h \
- /usr/include/c++/4.8.1/ext/numeric_traits.h \
- /usr/include/c++/4.8.1/bits/stl_pair.h \
- /usr/include/c++/4.8.1/bits/move.h \
- /usr/include/c++/4.8.1/bits/concept_check.h \
- /usr/include/c++/4.8.1/bits/stl_iterator_base_types.h \
- /usr/include/c++/4.8.1/bits/stl_iterator_base_funcs.h \
- /usr/include/c++/4.8.1/debug/debug.h \
- /usr/include/c++/4.8.1/bits/stl_iterator.h \
- /usr/include/c++/4.8.1/bits/allocator.h \
- /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++allocator.h \
- /usr/include/c++/4.8.1/ext/new_allocator.h /usr/include/c++/4.8.1/new \
- /usr/include/c++/4.8.1/exception \
- /usr/include/c++/4.8.1/bits/atomic_lockfree_defines.h \
- /usr/include/c++/4.8.1/bits/memoryfwd.h \
- /usr/include/c++/4.8.1/bits/stl_function.h \
- /usr/include/c++/4.8.1/backward/binders.h \
- /usr/include/c++/4.8.1/bits/stl_map.h \
- /usr/include/c++/4.8.1/bits/stl_multimap.h \
- /usr/include/c++/4.8.1/bits/range_access.h ../userprog/processtable.h \
- ../threads/scheduler.h ../machine/interrupt.h ../threads/list.h \
- ../machine/stats.h ../machine/timer.h ../userprog/bitmap.h \
- ../userprog/synchconsole.h
-preemptive.o: ../threads/preemptive.cc /usr/include/stdc-predef.h \
- ../threads/preemptive.h ../threads/system.h ../threads/copyright.h \
- ../threads/utility.h ../machine/sysdep.h ../threads/copyright.h \
- /usr/include/stdlib.h /usr/include/features.h /usr/include/sys/cdefs.h \
- /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
- /usr/include/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.1/include/stddef.h \
- /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
- /usr/include/endian.h /usr/include/bits/endian.h \
- /usr/include/bits/byteswap.h /usr/include/bits/types.h \
- /usr/include/bits/typesizes.h /usr/include/bits/byteswap-16.h \
- /usr/include/xlocale.h /usr/include/sys/types.h /usr/include/time.h \
- /usr/include/sys/select.h /usr/include/bits/select.h \
- /usr/include/bits/sigset.h /usr/include/bits/time.h \
- /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
- /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
- /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
- /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.1/include/stdarg.h \
- /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
- /usr/include/string.h ../threads/thread.h ../threads/synch.h \
- ../threads/list.h ../machine/machine.h ../threads/utility.h \
- ../machine/translate.h ../machine/disk.h ../userprog/addrspace.h \
- ../filesys/filesys.h ../filesys/openfile.h ../userprog/fdtable.h \
+ ../bin/noff.h ../machine/translate.h ../userprog/fdtable.h \
  ../filesys/openfile.h ../userprog/syscall.h ../userprog/synchconsole.h \
  ../threads/synch.h ../machine/console.h /usr/include/c++/4.8.1/map \
  /usr/include/c++/4.8.1/bits/stl_tree.h \
@@ -652,7 +604,65 @@ preemptive.o: ../threads/preemptive.cc /usr/include/stdc-predef.h \
  /usr/include/c++/4.8.1/bits/range_access.h ../userprog/processtable.h \
  ../threads/scheduler.h ../machine/interrupt.h ../threads/list.h \
  ../machine/stats.h ../machine/timer.h ../userprog/bitmap.h \
- ../userprog/synchconsole.h /usr/include/unistd.h \
+ ../userprog/synchconsole.h ../vm/miu.h
+preemptive.o: ../threads/preemptive.cc /usr/include/stdc-predef.h \
+ ../threads/preemptive.h ../threads/system.h ../threads/copyright.h \
+ ../threads/utility.h ../machine/sysdep.h ../threads/copyright.h \
+ /usr/include/stdlib.h /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.1/include/stddef.h \
+ /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+ /usr/include/endian.h /usr/include/bits/endian.h \
+ /usr/include/bits/byteswap.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/bits/byteswap-16.h \
+ /usr/include/xlocale.h /usr/include/sys/types.h /usr/include/time.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
+ /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.1/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/string.h ../threads/thread.h ../threads/synch.h \
+ ../threads/list.h ../machine/machine.h ../threads/utility.h \
+ ../machine/translate.h ../machine/disk.h ../userprog/addrspace.h \
+ ../filesys/filesys.h ../filesys/openfile.h ../bin/noff.h \
+ ../machine/translate.h ../userprog/fdtable.h ../filesys/openfile.h \
+ ../userprog/syscall.h ../userprog/synchconsole.h ../threads/synch.h \
+ ../machine/console.h /usr/include/c++/4.8.1/map \
+ /usr/include/c++/4.8.1/bits/stl_tree.h \
+ /usr/include/c++/4.8.1/bits/stl_algobase.h \
+ /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++config.h \
+ /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/os_defines.h \
+ /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/cpu_defines.h \
+ /usr/include/c++/4.8.1/bits/functexcept.h \
+ /usr/include/c++/4.8.1/bits/exception_defines.h \
+ /usr/include/c++/4.8.1/bits/cpp_type_traits.h \
+ /usr/include/c++/4.8.1/ext/type_traits.h \
+ /usr/include/c++/4.8.1/ext/numeric_traits.h \
+ /usr/include/c++/4.8.1/bits/stl_pair.h \
+ /usr/include/c++/4.8.1/bits/move.h \
+ /usr/include/c++/4.8.1/bits/concept_check.h \
+ /usr/include/c++/4.8.1/bits/stl_iterator_base_types.h \
+ /usr/include/c++/4.8.1/bits/stl_iterator_base_funcs.h \
+ /usr/include/c++/4.8.1/debug/debug.h \
+ /usr/include/c++/4.8.1/bits/stl_iterator.h \
+ /usr/include/c++/4.8.1/bits/allocator.h \
+ /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++allocator.h \
+ /usr/include/c++/4.8.1/ext/new_allocator.h /usr/include/c++/4.8.1/new \
+ /usr/include/c++/4.8.1/exception \
+ /usr/include/c++/4.8.1/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/4.8.1/bits/memoryfwd.h \
+ /usr/include/c++/4.8.1/bits/stl_function.h \
+ /usr/include/c++/4.8.1/backward/binders.h \
+ /usr/include/c++/4.8.1/bits/stl_map.h \
+ /usr/include/c++/4.8.1/bits/stl_multimap.h \
+ /usr/include/c++/4.8.1/bits/range_access.h ../userprog/processtable.h \
+ ../threads/scheduler.h ../machine/interrupt.h ../threads/list.h \
+ ../machine/stats.h ../machine/timer.h ../userprog/bitmap.h \
+ ../userprog/synchconsole.h ../vm/miu.h /usr/include/unistd.h \
  /usr/include/bits/posix_opt.h /usr/include/bits/environments.h \
  /usr/include/bits/confname.h /usr/include/getopt.h \
  /usr/include/sys/ptrace.h /usr/include/sys/wait.h /usr/include/signal.h \
@@ -683,9 +693,10 @@ addrspace.o: ../userprog/addrspace.cc /usr/include/stdc-predef.h \
  /usr/include/string.h ../threads/thread.h ../threads/synch.h \
  ../threads/list.h ../machine/machine.h ../threads/utility.h \
  ../machine/translate.h ../machine/disk.h ../userprog/addrspace.h \
- ../filesys/filesys.h ../filesys/openfile.h ../userprog/fdtable.h \
- ../filesys/openfile.h ../userprog/syscall.h ../userprog/synchconsole.h \
- ../threads/synch.h ../machine/console.h /usr/include/c++/4.8.1/map \
+ ../filesys/filesys.h ../filesys/openfile.h ../bin/noff.h \
+ ../machine/translate.h ../userprog/fdtable.h ../filesys/openfile.h \
+ ../userprog/syscall.h ../userprog/synchconsole.h ../threads/synch.h \
+ ../machine/console.h /usr/include/c++/4.8.1/map \
  /usr/include/c++/4.8.1/bits/stl_tree.h \
  /usr/include/c++/4.8.1/bits/stl_algobase.h \
  /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++config.h \
@@ -716,7 +727,7 @@ addrspace.o: ../userprog/addrspace.cc /usr/include/stdc-predef.h \
  /usr/include/c++/4.8.1/bits/range_access.h ../userprog/processtable.h \
  ../threads/scheduler.h ../machine/interrupt.h ../threads/list.h \
  ../machine/stats.h ../machine/timer.h ../userprog/bitmap.h \
- ../userprog/synchconsole.h ../userprog/addrspace.h ../bin/noff.h
+ ../userprog/synchconsole.h ../vm/miu.h ../userprog/addrspace.h
 bitmap.o: ../userprog/bitmap.cc /usr/include/stdc-predef.h \
  ../threads/copyright.h ../userprog/bitmap.h ../threads/utility.h \
  ../threads/copyright.h ../machine/sysdep.h /usr/include/stdlib.h \
@@ -761,9 +772,10 @@ exception.o: ../userprog/exception.cc /usr/include/stdc-predef.h \
  /usr/include/string.h ../threads/thread.h ../threads/synch.h \
  ../threads/list.h ../machine/machine.h ../threads/utility.h \
  ../machine/translate.h ../machine/disk.h ../userprog/addrspace.h \
- ../filesys/filesys.h ../filesys/openfile.h ../userprog/fdtable.h \
- ../filesys/openfile.h ../userprog/syscall.h ../userprog/synchconsole.h \
- ../threads/synch.h ../machine/console.h /usr/include/c++/4.8.1/map \
+ ../filesys/filesys.h ../filesys/openfile.h ../bin/noff.h \
+ ../machine/translate.h ../userprog/fdtable.h ../filesys/openfile.h \
+ ../userprog/syscall.h ../userprog/synchconsole.h ../threads/synch.h \
+ ../machine/console.h /usr/include/c++/4.8.1/map \
  /usr/include/c++/4.8.1/bits/stl_tree.h \
  /usr/include/c++/4.8.1/bits/stl_algobase.h \
  /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++config.h \
@@ -794,7 +806,7 @@ exception.o: ../userprog/exception.cc /usr/include/stdc-predef.h \
  /usr/include/c++/4.8.1/bits/range_access.h ../userprog/processtable.h \
  ../threads/scheduler.h ../machine/interrupt.h ../threads/list.h \
  ../machine/stats.h ../machine/timer.h ../userprog/bitmap.h \
- ../userprog/synchconsole.h ../userprog/processtable.h \
+ ../userprog/synchconsole.h ../vm/miu.h ../userprog/processtable.h \
  /usr/include/c++/4.8.1/string /usr/include/c++/4.8.1/bits/stringfwd.h \
  /usr/include/c++/4.8.1/bits/char_traits.h \
  /usr/include/c++/4.8.1/bits/postypes.h /usr/include/c++/4.8.1/cwchar \
@@ -860,179 +872,8 @@ progtest.o: ../userprog/progtest.cc /usr/include/stdc-predef.h \
  /usr/include/string.h ../threads/thread.h ../threads/synch.h \
  ../threads/list.h ../machine/machine.h ../threads/utility.h \
  ../machine/translate.h ../machine/disk.h ../userprog/addrspace.h \
- ../filesys/filesys.h ../filesys/openfile.h ../userprog/fdtable.h \
- ../filesys/openfile.h ../userprog/syscall.h ../userprog/synchconsole.h \
- ../threads/synch.h ../machine/console.h /usr/include/c++/4.8.1/map \
- /usr/include/c++/4.8.1/bits/stl_tree.h \
- /usr/include/c++/4.8.1/bits/stl_algobase.h \
- /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++config.h \
- /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/os_defines.h \
- /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/cpu_defines.h \
- /usr/include/c++/4.8.1/bits/functexcept.h \
- /usr/include/c++/4.8.1/bits/exception_defines.h \
- /usr/include/c++/4.8.1/bits/cpp_type_traits.h \
- /usr/include/c++/4.8.1/ext/type_traits.h \
- /usr/include/c++/4.8.1/ext/numeric_traits.h \
- /usr/include/c++/4.8.1/bits/stl_pair.h \
- /usr/include/c++/4.8.1/bits/move.h \
- /usr/include/c++/4.8.1/bits/concept_check.h \
- /usr/include/c++/4.8.1/bits/stl_iterator_base_types.h \
- /usr/include/c++/4.8.1/bits/stl_iterator_base_funcs.h \
- /usr/include/c++/4.8.1/debug/debug.h \
- /usr/include/c++/4.8.1/bits/stl_iterator.h \
- /usr/include/c++/4.8.1/bits/allocator.h \
- /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++allocator.h \
- /usr/include/c++/4.8.1/ext/new_allocator.h /usr/include/c++/4.8.1/new \
- /usr/include/c++/4.8.1/exception \
- /usr/include/c++/4.8.1/bits/atomic_lockfree_defines.h \
- /usr/include/c++/4.8.1/bits/memoryfwd.h \
- /usr/include/c++/4.8.1/bits/stl_function.h \
- /usr/include/c++/4.8.1/backward/binders.h \
- /usr/include/c++/4.8.1/bits/stl_map.h \
- /usr/include/c++/4.8.1/bits/stl_multimap.h \
- /usr/include/c++/4.8.1/bits/range_access.h ../userprog/processtable.h \
- ../threads/scheduler.h ../machine/interrupt.h ../threads/list.h \
- ../machine/stats.h ../machine/timer.h ../userprog/bitmap.h \
- ../userprog/synchconsole.h ../userprog/addrspace.h
-console.o: ../machine/console.cc /usr/include/stdc-predef.h \
- ../threads/copyright.h ../machine/console.h ../threads/utility.h \
- ../threads/copyright.h ../machine/sysdep.h /usr/include/stdlib.h \
- /usr/include/features.h /usr/include/sys/cdefs.h \
- /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
- /usr/include/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.1/include/stddef.h \
- /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
- /usr/include/endian.h /usr/include/bits/endian.h \
- /usr/include/bits/byteswap.h /usr/include/bits/types.h \
- /usr/include/bits/typesizes.h /usr/include/bits/byteswap-16.h \
- /usr/include/xlocale.h /usr/include/sys/types.h /usr/include/time.h \
- /usr/include/sys/select.h /usr/include/bits/select.h \
- /usr/include/bits/sigset.h /usr/include/bits/time.h \
- /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
- /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
- /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
- /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.1/include/stdarg.h \
- /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
- /usr/include/string.h ../threads/system.h ../threads/utility.h \
- ../threads/thread.h ../threads/synch.h ../threads/list.h \
- ../machine/machine.h ../machine/translate.h ../machine/disk.h \
- ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
- ../userprog/fdtable.h ../filesys/openfile.h ../userprog/syscall.h \
- ../userprog/synchconsole.h ../threads/synch.h ../machine/console.h \
- /usr/include/c++/4.8.1/map /usr/include/c++/4.8.1/bits/stl_tree.h \
- /usr/include/c++/4.8.1/bits/stl_algobase.h \
- /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++config.h \
- /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/os_defines.h \
- /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/cpu_defines.h \
- /usr/include/c++/4.8.1/bits/functexcept.h \
- /usr/include/c++/4.8.1/bits/exception_defines.h \
- /usr/include/c++/4.8.1/bits/cpp_type_traits.h \
- /usr/include/c++/4.8.1/ext/type_traits.h \
- /usr/include/c++/4.8.1/ext/numeric_traits.h \
- /usr/include/c++/4.8.1/bits/stl_pair.h \
- /usr/include/c++/4.8.1/bits/move.h \
- /usr/include/c++/4.8.1/bits/concept_check.h \
- /usr/include/c++/4.8.1/bits/stl_iterator_base_types.h \
- /usr/include/c++/4.8.1/bits/stl_iterator_base_funcs.h \
- /usr/include/c++/4.8.1/debug/debug.h \
- /usr/include/c++/4.8.1/bits/stl_iterator.h \
- /usr/include/c++/4.8.1/bits/allocator.h \
- /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++allocator.h \
- /usr/include/c++/4.8.1/ext/new_allocator.h /usr/include/c++/4.8.1/new \
- /usr/include/c++/4.8.1/exception \
- /usr/include/c++/4.8.1/bits/atomic_lockfree_defines.h \
- /usr/include/c++/4.8.1/bits/memoryfwd.h \
- /usr/include/c++/4.8.1/bits/stl_function.h \
- /usr/include/c++/4.8.1/backward/binders.h \
- /usr/include/c++/4.8.1/bits/stl_map.h \
- /usr/include/c++/4.8.1/bits/stl_multimap.h \
- /usr/include/c++/4.8.1/bits/range_access.h ../userprog/processtable.h \
- ../threads/scheduler.h ../machine/interrupt.h ../threads/list.h \
- ../machine/stats.h ../machine/timer.h ../userprog/bitmap.h \
- ../userprog/synchconsole.h
-machine.o: ../machine/machine.cc /usr/include/stdc-predef.h \
- ../threads/copyright.h ../machine/machine.h ../threads/utility.h \
- ../threads/copyright.h ../machine/sysdep.h /usr/include/stdlib.h \
- /usr/include/features.h /usr/include/sys/cdefs.h \
- /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
- /usr/include/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.1/include/stddef.h \
- /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
- /usr/include/endian.h /usr/include/bits/endian.h \
- /usr/include/bits/byteswap.h /usr/include/bits/types.h \
- /usr/include/bits/typesizes.h /usr/include/bits/byteswap-16.h \
- /usr/include/xlocale.h /usr/include/sys/types.h /usr/include/time.h \
- /usr/include/sys/select.h /usr/include/bits/select.h \
- /usr/include/bits/sigset.h /usr/include/bits/time.h \
- /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
- /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
- /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
- /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.1/include/stdarg.h \
- /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
- /usr/include/string.h ../machine/translate.h ../machine/disk.h \
- ../threads/system.h ../threads/utility.h ../threads/thread.h \
- ../threads/synch.h ../threads/list.h ../machine/machine.h \
- ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
- ../userprog/fdtable.h ../filesys/openfile.h ../userprog/syscall.h \
- ../userprog/synchconsole.h ../threads/synch.h ../machine/console.h \
- /usr/include/c++/4.8.1/map /usr/include/c++/4.8.1/bits/stl_tree.h \
- /usr/include/c++/4.8.1/bits/stl_algobase.h \
- /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++config.h \
- /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/os_defines.h \
- /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/cpu_defines.h \
- /usr/include/c++/4.8.1/bits/functexcept.h \
- /usr/include/c++/4.8.1/bits/exception_defines.h \
- /usr/include/c++/4.8.1/bits/cpp_type_traits.h \
- /usr/include/c++/4.8.1/ext/type_traits.h \
- /usr/include/c++/4.8.1/ext/numeric_traits.h \
- /usr/include/c++/4.8.1/bits/stl_pair.h \
- /usr/include/c++/4.8.1/bits/move.h \
- /usr/include/c++/4.8.1/bits/concept_check.h \
- /usr/include/c++/4.8.1/bits/stl_iterator_base_types.h \
- /usr/include/c++/4.8.1/bits/stl_iterator_base_funcs.h \
- /usr/include/c++/4.8.1/debug/debug.h \
- /usr/include/c++/4.8.1/bits/stl_iterator.h \
- /usr/include/c++/4.8.1/bits/allocator.h \
- /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++allocator.h \
- /usr/include/c++/4.8.1/ext/new_allocator.h /usr/include/c++/4.8.1/new \
- /usr/include/c++/4.8.1/exception \
- /usr/include/c++/4.8.1/bits/atomic_lockfree_defines.h \
- /usr/include/c++/4.8.1/bits/memoryfwd.h \
- /usr/include/c++/4.8.1/bits/stl_function.h \
- /usr/include/c++/4.8.1/backward/binders.h \
- /usr/include/c++/4.8.1/bits/stl_map.h \
- /usr/include/c++/4.8.1/bits/stl_multimap.h \
- /usr/include/c++/4.8.1/bits/range_access.h ../userprog/processtable.h \
- ../threads/scheduler.h ../machine/interrupt.h ../threads/list.h \
- ../machine/stats.h ../machine/timer.h ../userprog/bitmap.h \
- ../userprog/synchconsole.h
-mipssim.o: ../machine/mipssim.cc /usr/include/stdc-predef.h \
- ../threads/copyright.h ../machine/machine.h ../threads/utility.h \
- ../threads/copyright.h ../machine/sysdep.h /usr/include/stdlib.h \
- /usr/include/features.h /usr/include/sys/cdefs.h \
- /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
- /usr/include/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.1/include/stddef.h \
- /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
- /usr/include/endian.h /usr/include/bits/endian.h \
- /usr/include/bits/byteswap.h /usr/include/bits/types.h \
- /usr/include/bits/typesizes.h /usr/include/bits/byteswap-16.h \
- /usr/include/xlocale.h /usr/include/sys/types.h /usr/include/time.h \
- /usr/include/sys/select.h /usr/include/bits/select.h \
- /usr/include/bits/sigset.h /usr/include/bits/time.h \
- /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
- /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
- /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
- /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.1/include/stdarg.h \
- /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
- /usr/include/string.h ../machine/translate.h ../machine/disk.h \
- ../machine/mipssim.h ../threads/system.h ../threads/utility.h \
- ../threads/thread.h ../threads/synch.h ../threads/list.h \
- ../machine/machine.h ../userprog/addrspace.h ../filesys/filesys.h \
- ../filesys/openfile.h ../userprog/fdtable.h ../filesys/openfile.h \
+ ../filesys/filesys.h ../filesys/openfile.h ../bin/noff.h \
+ ../machine/translate.h ../userprog/fdtable.h ../filesys/openfile.h \
  ../userprog/syscall.h ../userprog/synchconsole.h ../threads/synch.h \
  ../machine/console.h /usr/include/c++/4.8.1/map \
  /usr/include/c++/4.8.1/bits/stl_tree.h \
@@ -1065,8 +906,66 @@ mipssim.o: ../machine/mipssim.cc /usr/include/stdc-predef.h \
  /usr/include/c++/4.8.1/bits/range_access.h ../userprog/processtable.h \
  ../threads/scheduler.h ../machine/interrupt.h ../threads/list.h \
  ../machine/stats.h ../machine/timer.h ../userprog/bitmap.h \
- ../userprog/synchconsole.h
-translate.o: ../machine/translate.cc /usr/include/stdc-predef.h \
+ ../userprog/synchconsole.h ../vm/miu.h ../userprog/addrspace.h
+console.o: ../machine/console.cc /usr/include/stdc-predef.h \
+ ../threads/copyright.h ../machine/console.h ../threads/utility.h \
+ ../threads/copyright.h ../machine/sysdep.h /usr/include/stdlib.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.1/include/stddef.h \
+ /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+ /usr/include/endian.h /usr/include/bits/endian.h \
+ /usr/include/bits/byteswap.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/bits/byteswap-16.h \
+ /usr/include/xlocale.h /usr/include/sys/types.h /usr/include/time.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
+ /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.1/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/string.h ../threads/system.h ../threads/utility.h \
+ ../threads/thread.h ../threads/synch.h ../threads/list.h \
+ ../machine/machine.h ../machine/translate.h ../machine/disk.h \
+ ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
+ ../bin/noff.h ../machine/translate.h ../userprog/fdtable.h \
+ ../filesys/openfile.h ../userprog/syscall.h ../userprog/synchconsole.h \
+ ../threads/synch.h ../machine/console.h /usr/include/c++/4.8.1/map \
+ /usr/include/c++/4.8.1/bits/stl_tree.h \
+ /usr/include/c++/4.8.1/bits/stl_algobase.h \
+ /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++config.h \
+ /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/os_defines.h \
+ /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/cpu_defines.h \
+ /usr/include/c++/4.8.1/bits/functexcept.h \
+ /usr/include/c++/4.8.1/bits/exception_defines.h \
+ /usr/include/c++/4.8.1/bits/cpp_type_traits.h \
+ /usr/include/c++/4.8.1/ext/type_traits.h \
+ /usr/include/c++/4.8.1/ext/numeric_traits.h \
+ /usr/include/c++/4.8.1/bits/stl_pair.h \
+ /usr/include/c++/4.8.1/bits/move.h \
+ /usr/include/c++/4.8.1/bits/concept_check.h \
+ /usr/include/c++/4.8.1/bits/stl_iterator_base_types.h \
+ /usr/include/c++/4.8.1/bits/stl_iterator_base_funcs.h \
+ /usr/include/c++/4.8.1/debug/debug.h \
+ /usr/include/c++/4.8.1/bits/stl_iterator.h \
+ /usr/include/c++/4.8.1/bits/allocator.h \
+ /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++allocator.h \
+ /usr/include/c++/4.8.1/ext/new_allocator.h /usr/include/c++/4.8.1/new \
+ /usr/include/c++/4.8.1/exception \
+ /usr/include/c++/4.8.1/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/4.8.1/bits/memoryfwd.h \
+ /usr/include/c++/4.8.1/bits/stl_function.h \
+ /usr/include/c++/4.8.1/backward/binders.h \
+ /usr/include/c++/4.8.1/bits/stl_map.h \
+ /usr/include/c++/4.8.1/bits/stl_multimap.h \
+ /usr/include/c++/4.8.1/bits/range_access.h ../userprog/processtable.h \
+ ../threads/scheduler.h ../machine/interrupt.h ../threads/list.h \
+ ../machine/stats.h ../machine/timer.h ../userprog/bitmap.h \
+ ../userprog/synchconsole.h ../vm/miu.h
+machine.o: ../machine/machine.cc /usr/include/stdc-predef.h \
  ../threads/copyright.h ../machine/machine.h ../threads/utility.h \
  ../threads/copyright.h ../machine/sysdep.h /usr/include/stdlib.h \
  /usr/include/features.h /usr/include/sys/cdefs.h \
@@ -1087,9 +986,68 @@ translate.o: ../machine/translate.cc /usr/include/stdc-predef.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.1/include/stdarg.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
  /usr/include/string.h ../machine/translate.h ../machine/disk.h \
- ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
  ../threads/system.h ../threads/utility.h ../threads/thread.h \
  ../threads/synch.h ../threads/list.h ../machine/machine.h \
+ ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
+ ../bin/noff.h ../machine/translate.h ../userprog/fdtable.h \
+ ../filesys/openfile.h ../userprog/syscall.h ../userprog/synchconsole.h \
+ ../threads/synch.h ../machine/console.h /usr/include/c++/4.8.1/map \
+ /usr/include/c++/4.8.1/bits/stl_tree.h \
+ /usr/include/c++/4.8.1/bits/stl_algobase.h \
+ /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++config.h \
+ /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/os_defines.h \
+ /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/cpu_defines.h \
+ /usr/include/c++/4.8.1/bits/functexcept.h \
+ /usr/include/c++/4.8.1/bits/exception_defines.h \
+ /usr/include/c++/4.8.1/bits/cpp_type_traits.h \
+ /usr/include/c++/4.8.1/ext/type_traits.h \
+ /usr/include/c++/4.8.1/ext/numeric_traits.h \
+ /usr/include/c++/4.8.1/bits/stl_pair.h \
+ /usr/include/c++/4.8.1/bits/move.h \
+ /usr/include/c++/4.8.1/bits/concept_check.h \
+ /usr/include/c++/4.8.1/bits/stl_iterator_base_types.h \
+ /usr/include/c++/4.8.1/bits/stl_iterator_base_funcs.h \
+ /usr/include/c++/4.8.1/debug/debug.h \
+ /usr/include/c++/4.8.1/bits/stl_iterator.h \
+ /usr/include/c++/4.8.1/bits/allocator.h \
+ /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++allocator.h \
+ /usr/include/c++/4.8.1/ext/new_allocator.h /usr/include/c++/4.8.1/new \
+ /usr/include/c++/4.8.1/exception \
+ /usr/include/c++/4.8.1/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/4.8.1/bits/memoryfwd.h \
+ /usr/include/c++/4.8.1/bits/stl_function.h \
+ /usr/include/c++/4.8.1/backward/binders.h \
+ /usr/include/c++/4.8.1/bits/stl_map.h \
+ /usr/include/c++/4.8.1/bits/stl_multimap.h \
+ /usr/include/c++/4.8.1/bits/range_access.h ../userprog/processtable.h \
+ ../threads/scheduler.h ../machine/interrupt.h ../threads/list.h \
+ ../machine/stats.h ../machine/timer.h ../userprog/bitmap.h \
+ ../userprog/synchconsole.h ../vm/miu.h
+mipssim.o: ../machine/mipssim.cc /usr/include/stdc-predef.h \
+ ../threads/copyright.h ../machine/machine.h ../threads/utility.h \
+ ../threads/copyright.h ../machine/sysdep.h /usr/include/stdlib.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.1/include/stddef.h \
+ /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+ /usr/include/endian.h /usr/include/bits/endian.h \
+ /usr/include/bits/byteswap.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/bits/byteswap-16.h \
+ /usr/include/xlocale.h /usr/include/sys/types.h /usr/include/time.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
+ /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.1/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/string.h ../machine/translate.h ../machine/disk.h \
+ ../machine/mipssim.h ../threads/system.h ../threads/utility.h \
+ ../threads/thread.h ../threads/synch.h ../threads/list.h \
+ ../machine/machine.h ../userprog/addrspace.h ../filesys/filesys.h \
+ ../filesys/openfile.h ../bin/noff.h ../machine/translate.h \
  ../userprog/fdtable.h ../filesys/openfile.h ../userprog/syscall.h \
  ../userprog/synchconsole.h ../threads/synch.h ../machine/console.h \
  /usr/include/c++/4.8.1/map /usr/include/c++/4.8.1/bits/stl_tree.h \
@@ -1122,7 +1080,65 @@ translate.o: ../machine/translate.cc /usr/include/stdc-predef.h \
  /usr/include/c++/4.8.1/bits/range_access.h ../userprog/processtable.h \
  ../threads/scheduler.h ../machine/interrupt.h ../threads/list.h \
  ../machine/stats.h ../machine/timer.h ../userprog/bitmap.h \
- ../userprog/synchconsole.h
+ ../userprog/synchconsole.h ../vm/miu.h
+translate.o: ../machine/translate.cc /usr/include/stdc-predef.h \
+ ../threads/copyright.h ../machine/machine.h ../threads/utility.h \
+ ../threads/copyright.h ../machine/sysdep.h /usr/include/stdlib.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.1/include/stddef.h \
+ /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+ /usr/include/endian.h /usr/include/bits/endian.h \
+ /usr/include/bits/byteswap.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/bits/byteswap-16.h \
+ /usr/include/xlocale.h /usr/include/sys/types.h /usr/include/time.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
+ /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.1/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/string.h ../machine/translate.h ../machine/disk.h \
+ ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
+ ../bin/noff.h ../machine/translate.h ../threads/system.h \
+ ../threads/utility.h ../threads/thread.h ../threads/synch.h \
+ ../threads/list.h ../machine/machine.h ../userprog/fdtable.h \
+ ../filesys/openfile.h ../userprog/syscall.h ../userprog/synchconsole.h \
+ ../threads/synch.h ../machine/console.h /usr/include/c++/4.8.1/map \
+ /usr/include/c++/4.8.1/bits/stl_tree.h \
+ /usr/include/c++/4.8.1/bits/stl_algobase.h \
+ /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++config.h \
+ /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/os_defines.h \
+ /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/cpu_defines.h \
+ /usr/include/c++/4.8.1/bits/functexcept.h \
+ /usr/include/c++/4.8.1/bits/exception_defines.h \
+ /usr/include/c++/4.8.1/bits/cpp_type_traits.h \
+ /usr/include/c++/4.8.1/ext/type_traits.h \
+ /usr/include/c++/4.8.1/ext/numeric_traits.h \
+ /usr/include/c++/4.8.1/bits/stl_pair.h \
+ /usr/include/c++/4.8.1/bits/move.h \
+ /usr/include/c++/4.8.1/bits/concept_check.h \
+ /usr/include/c++/4.8.1/bits/stl_iterator_base_types.h \
+ /usr/include/c++/4.8.1/bits/stl_iterator_base_funcs.h \
+ /usr/include/c++/4.8.1/debug/debug.h \
+ /usr/include/c++/4.8.1/bits/stl_iterator.h \
+ /usr/include/c++/4.8.1/bits/allocator.h \
+ /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++allocator.h \
+ /usr/include/c++/4.8.1/ext/new_allocator.h /usr/include/c++/4.8.1/new \
+ /usr/include/c++/4.8.1/exception \
+ /usr/include/c++/4.8.1/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/4.8.1/bits/memoryfwd.h \
+ /usr/include/c++/4.8.1/bits/stl_function.h \
+ /usr/include/c++/4.8.1/backward/binders.h \
+ /usr/include/c++/4.8.1/bits/stl_map.h \
+ /usr/include/c++/4.8.1/bits/stl_multimap.h \
+ /usr/include/c++/4.8.1/bits/range_access.h ../userprog/processtable.h \
+ ../threads/scheduler.h ../machine/interrupt.h ../threads/list.h \
+ ../machine/stats.h ../machine/timer.h ../userprog/bitmap.h \
+ ../userprog/synchconsole.h ../vm/miu.h
 synchconsole.o: ../userprog/synchconsole.cc /usr/include/stdc-predef.h \
  ../threads/copyright.h ../userprog/synchconsole.h ../threads/synch.h \
  ../threads/copyright.h ../threads/list.h ../threads/utility.h \
@@ -1195,6 +1211,63 @@ fdtable.o: ../userprog/fdtable.cc /usr/include/stdc-predef.h \
  /usr/include/c++/4.8.1/bits/stl_map.h \
  /usr/include/c++/4.8.1/bits/stl_multimap.h \
  /usr/include/c++/4.8.1/bits/range_access.h ../userprog/processtable.h
+miu.o: ../vm/miu.cc /usr/include/stdc-predef.h ../vm/miu.h \
+ ../threads/copyright.h /usr/include/stdlib.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
+ /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.1/include/stddef.h \
+ /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+ /usr/include/endian.h /usr/include/bits/endian.h \
+ /usr/include/bits/byteswap.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/bits/byteswap-16.h \
+ /usr/include/xlocale.h /usr/include/sys/types.h /usr/include/time.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
+ ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
+ ../threads/utility.h ../threads/copyright.h ../machine/sysdep.h \
+ /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.8.1/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/string.h ../bin/noff.h ../machine/translate.h \
+ ../userprog/bitmap.h ../filesys/openfile.h ../machine/machine.h \
+ ../machine/translate.h ../machine/disk.h ../threads/system.h \
+ ../threads/utility.h ../threads/thread.h ../threads/synch.h \
+ ../threads/list.h ../userprog/fdtable.h ../userprog/syscall.h \
+ ../userprog/synchconsole.h ../threads/synch.h ../machine/console.h \
+ /usr/include/c++/4.8.1/map /usr/include/c++/4.8.1/bits/stl_tree.h \
+ /usr/include/c++/4.8.1/bits/stl_algobase.h \
+ /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++config.h \
+ /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/os_defines.h \
+ /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/cpu_defines.h \
+ /usr/include/c++/4.8.1/bits/functexcept.h \
+ /usr/include/c++/4.8.1/bits/exception_defines.h \
+ /usr/include/c++/4.8.1/bits/cpp_type_traits.h \
+ /usr/include/c++/4.8.1/ext/type_traits.h \
+ /usr/include/c++/4.8.1/ext/numeric_traits.h \
+ /usr/include/c++/4.8.1/bits/stl_pair.h \
+ /usr/include/c++/4.8.1/bits/move.h \
+ /usr/include/c++/4.8.1/bits/concept_check.h \
+ /usr/include/c++/4.8.1/bits/stl_iterator_base_types.h \
+ /usr/include/c++/4.8.1/bits/stl_iterator_base_funcs.h \
+ /usr/include/c++/4.8.1/debug/debug.h \
+ /usr/include/c++/4.8.1/bits/stl_iterator.h \
+ /usr/include/c++/4.8.1/bits/allocator.h \
+ /usr/include/c++/4.8.1/x86_64-unknown-linux-gnu/bits/c++allocator.h \
+ /usr/include/c++/4.8.1/ext/new_allocator.h /usr/include/c++/4.8.1/new \
+ /usr/include/c++/4.8.1/exception \
+ /usr/include/c++/4.8.1/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/4.8.1/bits/memoryfwd.h \
+ /usr/include/c++/4.8.1/bits/stl_function.h \
+ /usr/include/c++/4.8.1/backward/binders.h \
+ /usr/include/c++/4.8.1/bits/stl_map.h \
+ /usr/include/c++/4.8.1/bits/stl_multimap.h \
+ /usr/include/c++/4.8.1/bits/range_access.h ../userprog/processtable.h \
+ ../threads/scheduler.h ../machine/interrupt.h ../threads/list.h \
+ ../machine/stats.h ../machine/timer.h ../userprog/synchconsole.h \
+ ../vm/miu.h
 # DEPENDENCIES MUST END AT END OF FILE
 # IF YOU PUT STUFF HERE IT WILL GO AWAY
 # see make depend above

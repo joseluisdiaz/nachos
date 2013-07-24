@@ -22,6 +22,8 @@ Statistics::Statistics()
     numDiskReads = numDiskWrites = 0;
     numConsoleCharsRead = numConsoleCharsWritten = 0;
     numPageFaults = numPacketsSent = numPacketsRecvd = 0;
+    usedPages = tlbHit = tlbMiss = 0;
+
 }
 
 //----------------------------------------------------------------------
@@ -41,4 +43,6 @@ Statistics::Print()
     printf("Paging: faults %d\n", numPageFaults);
     printf("Network I/O: packets received %d, sent %d\n", numPacketsRecvd, 
 	numPacketsSent);
+    printf("VirtualMemory: Used Pages: %d, TLB hits: %d, TLB miss: %d\n", 
+           usedPages, tlbHit, tlbMiss);
 }

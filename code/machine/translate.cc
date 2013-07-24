@@ -33,6 +33,7 @@
 #include "machine.h"
 #include "addrspace.h"
 #include "system.h"
+#include "miu.h"
 
 // Routines for converting Words and Short Words to and from the
 // simulated machine's format of little endian.  These end up
@@ -198,6 +199,7 @@ Machine::Translate(int virtAddr, int* physAddr, int size, bool writing)
 	DEBUG('a', "alignment problem at %d, size %d!\n", virtAddr, size);
 	return AddressErrorException;
     }    
+
     // we must have either a TLB or a page table, but not both!
     ASSERT(tlb == NULL || pageTable == NULL);	
     ASSERT(tlb != NULL || pageTable != NULL);	
@@ -222,10 +224,13 @@ Machine::Translate(int virtAddr, int* physAddr, int size, bool writing)
         for (entry = NULL, i = 0; i < TLBSize; i++)
     	    if (tlb[i].valid && (tlb[i].virtualPage == (int)vpn)) {
 		entry = &tlb[i];			// FOUND!
+                stats->tlbHit++;
+                miu->coreMap[entry->physicalPage].tick = stats->totalTicks;
 		break;
 	    }
 	if (entry == NULL) {				// not found
     	    DEBUG('a', "*** no valid TLB entry found for this virtual page!\n");
+            stats->tlbMiss++;
     	    return PageFaultException;		// really, this is a TLB fault,
 						// the page may be in memory,
 						// but not in the TLB

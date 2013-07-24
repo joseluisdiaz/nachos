@@ -18,7 +18,6 @@
 #include "copyright.h"
 #include "system.h"
 #include "addrspace.h"
-#include "noff.h"
 
 //----------------------------------------------------------------------
 // SwapHeader
@@ -57,10 +56,11 @@ SwapHeader (NoffHeader *noffH)
 //	"executable" is the file containing the object code to load into memory
 //----------------------------------------------------------------------
 
-AddrSpace::AddrSpace(OpenFile *executable)
+AddrSpace::AddrSpace(OpenFile *exe)
 {
-    NoffHeader noffH;
     unsigned int i, size;
+
+    this->executable = exe;
 
     executable->ReadAt((char *)&noffH, sizeof(noffH), 0);
     if ((noffH.noffMagic != NOFFMAGIC) && 
@@ -68,62 +68,98 @@ AddrSpace::AddrSpace(OpenFile *executable)
     	SwapHeader(&noffH);
     ASSERT(noffH.noffMagic == NOFFMAGIC);
 
-// how big is address space?
+    // how big is address space?
     size = noffH.code.size + noffH.initData.size + noffH.uninitData.size 
 			+ UserStackSize;	// we need to increase the size
 						// to leave room for the stack
     numPages = divRoundUp(size, PageSize);
     size = numPages * PageSize;
 
-    ASSERT(numPages <= NumPhysPages);		// check we're not trying
+    //    ASSERT(numPages <= NumPhysPages);	// check we're not trying
 						// to run anything too big --
 						// at least until we have
-						// virtual memory
-
+					
+    // virtual memory
     DEBUG('a', "Initializing address space, num pages %d, size %d\n", numPages, size);
 
     pageTable = new TranslationEntry[numPages];
+    shadowTable = new ShadowEntry[numPages];
     // first, set up the translation     
+
+    stats->usedPages += numPages;
+
     for (i = 0; i < numPages; i++) {
-	pageTable[i].virtualPage = i;	// for now, virtual page # = phys page #
-	pageTable[i].physicalPage = memMap->Find();
-	pageTable[i].valid = true;
-	pageTable[i].use = false;
+	pageTable[i].virtualPage = i;
+	pageTable[i].valid = false;	
+        pageTable[i].use = true;
 	pageTable[i].dirty = false;
 	pageTable[i].readOnly = false;  // if the code segment was entirely on 
 					// a separate page, we could set its 
 					// pages to be read-only
-        DEBUG('a', "pagetable[%d].physicalPage = %d\n", i, pageTable[i].physicalPage); 
-    }
-    int offset = pageTable[0].physicalPage * PageSize;
+        DEBUG('a', "pagetable[%d].physicalPage = %d\n", i, pageTable[i].physicalPage);
  
-    bzero(machine->mainMemory + offset, size);
-    
-    // then, copy in the code and data segments into memory
-    if (noffH.code.size > 0) {
-        DEBUG('a', "Initializing code segment, at 0x%x, size %d\n", 
-			noffH.code.virtualAddr, noffH.code.size);
-        executable->ReadAt(
-                           machine->mainMemory + (noffH.code.virtualAddr + offset),
-                           noffH.code.size, 
-                           noffH.code.inFileAddr);
-    }
-
-    if (noffH.initData.size > 0) {
-        DEBUG('a', "Initializing data segment, at 0x%x, size %d\n", 
-			noffH.initData.virtualAddr, 
-              noffH.initData.size);
-        executable->ReadAt( machine->mainMemory + (noffH.initData.virtualAddr + offset),
-                            noffH.initData.size, noffH.initData.inFileAddr);
     }
 
 }
+
+//---------------------------------------------------------------------
+//AddrSpace::LOD
+//      "Porque podemos" - Diaz-Racca hoy
+//---------------------------------------------------------------------
+
+bool AddrSpace::isInSegment(int vpn, Segment seg)
+{
+  int addr = vpn * PageSize;
+
+  DEBUG('a', "inSegment: addr:%d, s.va:(%d), s.size:(%d)\n",
+        addr, seg.virtualAddr, seg.size);
+        
+  if (addr >= seg.virtualAddr && 
+      addr <= seg.virtualAddr + seg.size)
+    return true;
+
+  return false;
+}
+
+int AddrSpace::getInFileAddr(int vpn, Segment seg)
+{
+  return seg.inFileAddr + (vpn * PageSize);
+}
+
+void AddrSpace::LOD(int vpn, int physicalPage)
+{
+  int offset = physicalPage * PageSize;
+  int inFileAddr = -1;
+
+  bzero(machine->mainMemory + offset, PageSize);
+  
+  if (noffH.code.size > 0 && isInSegment(vpn,noffH.code)) {
+    inFileAddr = getInFileAddr(vpn, noffH.code);
+    DEBUG('a', "### CodeSegment starting at %d\n", inFileAddr);
+  }
+  
+  if (noffH.initData.size > 0 && isInSegment(vpn,noffH.initData)) {
+    inFileAddr = getInFileAddr(vpn, noffH.initData);
+    DEBUG('a', "### DataSegment starting at %d\n", inFileAddr);
+  }
+
+  if (inFileAddr != -1) {
+    executable->ReadAt(machine->mainMemory + offset,
+                       PageSize, inFileAddr);
+  }
+
+}
+
+//----------------------------------------------------------------------
+//Métodos para las shadows entry
+//by Diaz-Racca, antes del carlitos de pollo de Menggano
+//----------------------------------------------------------------------
+
 
 //----------------------------------------------------------------------
 // AddrSpace::~AddrSpace
 // 	Dealloate an address space.  Nothing for now!
 //----------------------------------------------------------------------
-
 AddrSpace::~AddrSpace()
 {
    delete pageTable;
@@ -173,6 +209,14 @@ AddrSpace::InitRegisters()
 void AddrSpace::SaveState() 
 {}
 
+TranslationEntry *AddrSpace::GetEntry(int vpn) {
+  return &pageTable[vpn];
+}
+
+ShadowEntry *AddrSpace::GetShadowEntry(int vpn) {
+  return &shadowTable[vpn];
+}
+
 
 void AddrSpace::Dump()
 {
@@ -205,6 +249,9 @@ void AddrSpace::Dump()
 
 void AddrSpace::RestoreState() 
 {
-    machine->pageTable = pageTable;
-    machine->pageTableSize = numPages;
+  #ifndef USE_TLB
+  machine->pageTable = pageTable;
+  machine->pageTableSize = numPages;
+  #endif
+
 }
